@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <title>Login Page
+        </title> 
+        <style>
+           
+             *{
+                padding: 0px;
+                margin: 0px;
+        
+            }
+            body
+            {
+                font-family:arial;
+            }
+          header h2
+            {
+               
+               display: inline;
+                padding: 100px;
+                margin-top: 10px
+
+            }
+           
+            
+          
+             header
+            {
+           
+               box-sizing: border-box;
+                width: 100%;
+                height: 120px;
+            background-color:darkblue;
+                color: white;
+           
+               
+            }
+              .btn
+            {
+                cursor: pointer;
+                background-color: white;
+                border: none;
+                position: relative;
+                left:800px;
+                text-align: center;
+                border-radius: 5px;
+                padding:5px;
+                width: 70px;
+                margin-top: 15px;
+               font-weight: bold;
+            
+                }
+            form
+            { padding: 5px;
+                margin: auto;
+                margin-top: 50px;
+                border: 2px solid black;
+                width:300px;
+                height: 300px;
+                
+                background-color: white;
+            }
+            form h1,formp , form label{
+                padding: 5px;
+                margin-top: 5px;
+            }
+            .row3
+            {
+                     padding: 5px;
+
+                text-align: center;
+            }
+            .reg
+            {
+                border: 2px solid black;
+                width:300px;
+                height: 200px;
+                margin: auto;
+                padding: 10px;
+                background-color: white;
+                                     padding: 5px;
+
+            }
+            .policy
+            {
+              width: 400px;
+                margin: auto;
+                padding: 10px;
+            }
+            b
+            {
+                padding: 5px;
+                color: blue;
+                font-size: 10pt
+            }
+            input:invalid
+            {
+                border: 2px solid red;
+            }
+            input:valid ~p
+            {
+                color: white;
+            }
+            div p{
+                font-size:10pt;
+                color: red;
+                padding: 5px;
+            }
+           
+            
+            inputp[type="SignIn"]
+        </style>
+    </head>
+    <body>
+         <header>   <h2>Booking.com</h2>
+               <input onclick="parent.location='register.html'"class ="btn"type="button" value="Register" action="register.html" >
+                <input class ="btn" type="button" value="Sign In" onclick="parent.location='login.html'">
+            </header>
+<form action="pag1.html">
+    <h1>
+    Sign in </h1>
+    <p>you can sign in using your account to access our service</p>
+        <div class="row1">
+        <label>Email: </label>
+        <input type="Email" placeholder="Enter your Email" required >
+             <p>The email shouldnt contain any character except '@' sign</p>
+        </div>
+        <div class="row2">
+             <label>Password: </label>
+        <input type="password" placeholder="Enter your password" pattern="[0-9 ]{5}" required>
+            <p>password should consists of 5 numbers only</p>
+        </div>
+        <div class="row3">
+         <input type="submit" value="Sign in">
+        </div>
+    </form>
+        <br>
+        
+        <div class="reg">
+            <h2>Don't have an account yet?</h2>
+            <p>Create an account to use Booking.com services easily</p>
+            <a href="register.html">Create your account</a>
+        </div>
+        <div class="policy">
+            <p>By signing in or creating an account, you agree with our <b>Terms & Conditions</b> and<b> Privacy Statement</b></p>
+        </div>
+    </body>
+</html>
