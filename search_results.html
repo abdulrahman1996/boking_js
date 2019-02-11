@@ -1,0 +1,176 @@
+<html>
+
+<head>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            font-family: 'Arial'
+        }
+
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            width: 300px;
+            flex: 1;
+            left: 0px;
+            margin-left: 20px;
+           
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            position: absolute;
+            width: 100%;
+            left: 0px;
+            background-color: chartreuse;
+        }
+
+        .results {
+
+            display: flex;
+            flex: 3;
+            flex-direction: column;
+            position: absolute;
+            left: 350px;
+            margin-left: 10px;
+            background-color: white;
+            border: 1px solid black;
+        }
+
+        .result {
+            display: flex;
+            margin: 20px;
+            flex-direction: row;
+            height: 240px;
+            border: 1px solid gray;
+            width: 800px;
+            border-radius: 10px;
+        }
+
+        .result:hover {
+            background-color: rgb(202, 233, 243);
+        }
+
+        .result-location {
+            color: rgb(98, 98, 224);
+            font-size: 10px;
+            margin-top: 5px;
+
+        }
+
+        .result-img {
+
+            margin-top: 10px;
+            border-radius: 5px;
+            margin-left: 10px;
+            height: 220px;
+            width: 200px;
+            object-fit: cover;
+        }
+
+        .result-body {
+            flex: 3;
+            margin: 10px;
+
+        }
+
+        .result-price {
+            flex: 1;
+        }
+
+        .result-title {
+            color: rgb(98, 98, 224);
+            font-size: 30px;
+
+        }
+
+        .result-title:hover {
+            color: orange;
+            cursor: pointer;
+
+
+        }
+
+        .result-discription {
+            font-size: 15px;
+            margin-top: 5px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="sidebar">
+             
+        </div>
+        <div class="results">
+            <div class="result">
+                <img class="result-img" src="5.jpg">
+                <div class="result-body">
+                    <div class="result-title"><b>hello world</b></div>
+                    <div class="result-location">
+                        <img src="loc.bmp" width="15px">
+                        Cairo ,misr algadeda- roxy show on map
+                    </div>
+                    <div class="result-discription">
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi corporis vitae culpa
+                            deserunt dolorem alias repellat, maxime fuga ab, iusto aliquid magnam doloribus eveniet
+                            rerum sequi quos commodi sint dolorum!</p>
+                    </div>
+                </div>
+                <div class="result-price">
+                    width
+                </div>
+
+            </div>
+            <div class="result">
+                <img class="result-img" src="Assignment.png">
+                <div class="result-body">
+                    <div class="result-title"><b>hello world</b></div>
+                    <div class="result-location">
+                        <img src="loc.bmp" width="15px">
+                        Cairo ,misr algadeda- roxy show on map
+                    </div>
+                    <div class="result-discription">
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi corporis vitae culpa
+                            deserunt dolorem alias repellat, maxime fuga ab, iusto aliquid magnam doloribus eveniet
+                            rerum sequi quos commodi sint dolorum!</p>
+                    </div>
+                </div>
+                <div class="result-price">
+                    width
+                </div>
+
+            </div>
+            <div class="result">
+                <img class="result-img" src="5.jpg">
+                <div class="result-body">
+                    <div class="result-title"><b>hello world</b></div>
+                    <div class="result-location">
+                        <img src="loc.bmp" width="15px">
+                        Cairo ,misr algadeda- roxy show on map
+                    </div>
+                    <div class="result-discription">
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi corporis vitae culpa
+                            deserunt dolorem alias repellat, maxime fuga ab, iusto aliquid magnam doloribus eveniet
+                            rerum sequi quos commodi sint dolorum!</p>
+                    </div>
+                </div>
+                <div class="result-price">
+                    width
+                </div>
+
+            </div>
+        </div>
+        
+    </div>
+
+
+</body>
+
+</html>
