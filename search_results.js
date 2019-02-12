@@ -49,7 +49,7 @@ $.ajax({
 
         
 
-        var filterBycity = data.filter(e => e.city ==filterObject.city);
+        var filterBycity = data.filter(e => e.city =="cairo");
         filterBycity.forEach(element => {
             renderResult(element);
         });
