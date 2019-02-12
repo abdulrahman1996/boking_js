@@ -1,7 +1,9 @@
 <html>
 
 <head>
+    
     <style>
+          @import url("pag1.css");
         * {
             padding: 0px;
             margin: 0px;
@@ -16,10 +18,13 @@
             flex: 1;
             left: 0px;
             margin-left: 20px;
+            
 
         }
 
         .container {
+           
+            margin-top: 20px; 
             display: flex;
             flex-direction: row;
             position: absolute;
@@ -37,7 +42,7 @@
             left: 350px;
             margin-left: 10px;
             background-color: white;
-            border: 1px solid black;
+            /* border: 1px solid black; */
         }
 
         .result {
@@ -104,10 +109,16 @@
 </head>
 
 <body>
+        <header> <a id="h" href="#">Booking.com</a>
+            <input onclick="parent.location='register.html'" class="btn" type="button" value="Register"
+                action="register.html">
+            <input class="btn" type="button" value="Sign In" onclick="parent.location='login.html'">
+        </header>
     <div class="container">
-
+           
+        
         <div class="sidebar">
-
+        
         </div>
         <div class="results">
             <div class="result">
