@@ -66,7 +66,8 @@
       font-size: 14pt;
   }
 
-  input[placeholder="where are you going?"] {
+  input[type="search"] {
+      font-size: 16px;
       border: 2px solid darkorange;
       padding: 10px;
       margin-left: 100px;
@@ -84,7 +85,7 @@
 
   }
 
-  input[placeholder="where are you going?"]:focus {
+  input[type="search"] :focus {
       background-image: none;
 
   }
