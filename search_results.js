@@ -1,60 +1,104 @@
 function renderResult(resultsData) {
-           
-
-           
-    jQuery('<div/>', {
-        class: 'result',
-        id:  resultsData._id,
-    }).appendTo('.results');
 
 
+    if ($("#" + resultsData._id).length == 0) {
+        jQuery('<div/>', {
+            class: 'result',
+            id: resultsData._id,
+        }).appendTo('.results');
 
-    $('<img>' , {
-        class: 'result-img' , 
-        src: resultsData.images[0] ,
-    }).appendTo('#'+resultsData._id);
 
-    $('<div/>' , {
-        class: 'result-body' , 
-        id:resultsData._id+"body"
-    }).appendTo('#'+resultsData._id);
 
-   
+        $('<img>', {
+            class: 'result-img',
+            src: resultsData.images[0],
+        }).appendTo('#' + resultsData._id);
 
-   $('<div/>' , {
-        class: 'result-title' , 
+        $('<div/>', {
+            class: 'result-body',
+            id: resultsData._id + "body"
+        }).appendTo('#' + resultsData._id);
 
-    }).appendTo('#'+resultsData._id+'body').text(resultsData.name);
 
-    $('<div/>' , {
-        class: 'result-location' , 
 
-    }).appendTo('#'+resultsData._id+'body')
-    .append('<a href="https://www.google.com/maps/@' +resultsData.latitude+','+resultsData.longitude + ' ">' +resultsData.city+' , '+ resultsData.location +'</a>');
+        $('<div/>', {
+            class: 'result-title',
 
-    $('<div/>' , {
-        class: 'result-discription' , 
+        }).appendTo('#' + resultsData._id + 'body').text(resultsData.name);
 
-    }).appendTo('#'+resultsData._id+'body').text(resultsData.discription);
+        $('<div/>', {
+            class: 'result-location',
 
-   
-   
+        }).appendTo('#' + resultsData._id + 'body')
+            .append('<a href="https://www.google.com/maps/@' + resultsData.latitude + ',' + resultsData.longitude + ' ">' + resultsData.city + ' , ' + resultsData.location + '</a>');
+
+        $('<div/>', {
+            class: 'result-discription',
+
+        }).appendTo('#' + resultsData._id + 'body').text(resultsData.discription);
+    }
+
+
 
 }
 
-$.ajax({
-    url: "data.json",
 
-    success: function (data) {
+/// logic 
+var filterArray = [];
 
-        
 
-        var filterBycity = data.filter(e => e.city =="cairo");
-        filterBycity.forEach(element => {
-            renderResult(element);
-        });
-        // bydate = data.some( hotel=>hotel.rooms.filter(room => room.Date.parse(avalible_from))  ) 
 
-    }
-    
-})
+
+function handelRequest() {
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const check_in = urlParams.get('check_in');
+    const check_out = urlParams.get('check_out');
+    const city = urlParams.get('city');
+    if(city)
+    filterArray.push({ function: filterBycity, parameter: city });
+    if(check_in && check_out)
+    filterArray.push({ function: filterByCheck, parameter: { check_in, check_out } });
+
+    showResults();
+
+}
+
+
+function filterByCheck(hotel, check) {
+   
+    return hotel.rooms.some(room => Date.parse(room.avalible_from) > Date.parse(check.check_in) && Date.parse(room.avalible_to) <Date.parse(check.check_out));
+}
+
+
+function filterBycity(hotel, city) {
+    return hotel.city == city;
+}
+
+
+
+
+handelRequest();
+
+function showResults() {
+    $.ajax({
+        url: "data.json",
+
+        success: function (data) {
+
+
+            filterdResults = data.filter(hotel => filterArray.every(condition => condition.function(hotel, condition.parameter) == true));
+            filterdResults.forEach(element => {
+                renderResult(element);
+            });
+
+        }
+    })
+}
+
+
+
+
+
+
+

@@ -31,7 +31,11 @@
       height: 120px;
       background-color: darkblue;
       color: white;
-
+        position: fixed; 
+        top: 0px;
+       
+        z-index: 100; 
+        
 
   }
 
