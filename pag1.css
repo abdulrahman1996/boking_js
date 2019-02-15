@@ -252,9 +252,6 @@
       bottom: auto;
   }
 
-  .dropdown-content a:hover {
-      background-color: aliceblue;
-  }
 
 
   .dropdown:hover .dropdown-content {
@@ -264,3 +261,20 @@
   .dropdown:hover .dropbtn {
       background-color: white;
   }
+ .acr 
+        {
+            display: inline-block;
+        }
+
+.acrin
+{
+    width:50px;
+    position: relative;
+    left: 60px;
+}
+
+input[name=Room]
+{
+  
+    left: 48px;
+}

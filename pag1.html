@@ -5,7 +5,7 @@
     <title>Booking.com</title>
     <style>
         @import url("pag1.css");
-
+       
     </style>
     <script src="jquery-3.3.1.js"></script>
     <script src="jquery.autocomplete.min.js"></script>
@@ -45,15 +45,25 @@
                 <input type="date" placeholder="CheckIn" id="outdate" name="checkIn">
                 <input type="date" placeholder="CheckOut" id="indate" name="checkOut">
                 <div class="dropdown">
-                    <button onclick="myFunction()" class="dropbtn">Adults-Children-Rooms &#9679;</button>
+                    <button class="dropbtn">Adults-Children-Rooms &#9679;</button>
                     <div id="myDropdown" class="dropdown-content">
+                        <label class="acr">Adult</label>
+                        <input class="acrin" type="number" name="adults" pattern="[1-9] " value="1">
+                        <br>
+                        <label class="acr">Child </label>
+                        <input class="acrin" type="number" name="children" pattern="[0-9] "  value="0"> 
+                                                <br>
+
+                        <label class="acr">Rooms</label>
+                        <input class="acrin" type="number" name="Room" pattern="[1-9] " value="1">
+                        <!--
                         <label>Adult </label> <span><input class="dd" type="button" value="-"> <label>1</label> <input type="button" class="dd dd2" value="+"></span>
                         <br>
                         <label>Child</label> <span><input class="dd" type="button" value="-"> <label>0</label> <input type="button" class="dd dd2" value="+"></span>
                         <br>
                         <label>Room</label> <span><input class="dd" type="button" value="-"> <label>1</label> <input type="button" class="dd dd2" value="+"></span>
                         <br>
-
+                       -->
                     </div>
                 </div>
                 <input type="submit" value="Search" id='searchbtn'>
