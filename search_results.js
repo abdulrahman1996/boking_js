@@ -52,8 +52,8 @@ var filterArray = [];
 function handelRequest() {
 
     const urlParams = new URLSearchParams(window.location.search);
-    const check_in = urlParams.get('checkIn');
-    const check_out = urlParams.get('checkOut');
+     check_in = urlParams.get('checkIn');
+     check_out = urlParams.get('checkOut');
 
 
     const city = urlParams.get('city');
@@ -71,7 +71,7 @@ function handelRequest() {
 
 function filterByCheck(hotel, check) {
    
-    return hotel.rooms.some(room => Date.parse(room.avalible_from) > Date.parse(check.check_in) && Date.parse(room.avalible_to) <Date.parse(check.check_out));
+    return hotel.rooms.some(room => Date.parse(room.avalible_from) > Date.parse(check.check_in) && Date.parse(room.avalible_to) >Date.parse(check.check_out));
 }
 
 
@@ -85,7 +85,8 @@ function filterBycity(hotel, city) {
 /// filter by price 
 // filter by stars /
 // filter  date 
-
+//1- filterarray.push 
+//2- f
 
 
 handelRequest();
@@ -96,8 +97,8 @@ function showResults() {
 
         success: function (data) {
 
-
-            var filterdResults = data.filter(hotel => filterArray.every(condition => condition.function(hotel, condition.parameter) == true));
+            
+                 filterdResults = data.filter(hotel => filterArray.every(condition => condition.function(hotel, condition.parameter) == true));
             filterdResults.forEach(element => {
                 renderResult(element);
             });
@@ -105,6 +106,7 @@ function showResults() {
         }
     })
 }
+
 
 
 
