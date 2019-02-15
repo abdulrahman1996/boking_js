@@ -2,24 +2,7 @@
 <head>
     <style>
         
-        
-        * {
-            padding: 0px;
-            margin: 0px;
-            font-family: 'Arial'
-        }
-
-        .sidebar {
-            display: flex;
-            flex-direction: column;
-            position: absolute;
-            width: 300px;
-            flex: 1;
-            left: 0px;
-            margin-left: 20px;
-           
-        }
-
+      @import url("pag1.css");
         .container {
             display: flex;
             flex-direction: row;
@@ -100,14 +83,230 @@
             margin-top: 5px;
 
         }
+        
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            width: 300px;
+            flex: 1;
+            left: 0px;
+            margin-left: 40px;
+            margin-top: 10px;
+        }
+        .side{
+         background-color: #febb02;
+         border: 2px solid blue;
+        border-radius: 2px;
+        }
+        .input{
+            width: 90%;
+   border-radius: 5px; 
+border-style: none;
+height: 34px;
+
+padding: 5px;
+
+    padding-left: 5px;
+
+line-height: 22px;
+
+font-size: 15px;
+
+overflow: hidden;
+
+text-overflow: ellipsis;
+        }
+        .submit:hover {
+     background:#003580 ;
+}
+        .submit{
+        padding:5px 15px; 
+         width: 100px;
+         height: 40px;
+      background:#3884ed ;
+        border:0 none;
+        color: white;
+        cursor:pointer;
+        border-radius: 5px; 
+        float: right;
+            margin: 3px;
+}
+        select {
+    height: 35px;
+    font-weight: normal;
+    color: #444;
+    line-height: 1.3;
+    border-radius: 3px;
+            border-style: none;
+            margin: 2px;
+}
+        #f1{
+            margin-left: 10px;
+        }
+        .formdiv{
+            margin: 3px;
+        }
+        label{
+            font-size: 14px;
+        }
+        side2{
+            margin: 3px;
+            border: 5px solid blue;
+        }
+        .filter1{
+            
+            margin: 10px;
+        }
+        .filter{border-bottom: 1px solid grey;}
+        .check{
+            margin: 10px;
+            cursor: pointer;
+        }
+        .container2 {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Hide the browser's default checkbox */
+.container2 input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.container2:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container2 input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+
+
     </style>
 </head>
 
 <body>
+        <header> <a id="h" href="#">Booking.com</a>
+                <input onclick="parent.location='register.html'"class ="btn"type="button" value="Register" action="register.html" >
+                <input class ="btn" type="button" value="Sign In" onclick="parent.location='login.html'">
+            </header>
+          
     <div class="container">
 
         <div class="sidebar">
-             
+            <div class="side">
+               <form id="f1" action="">
+                <p>Search</p>
+                <div class="formdiv"> 
+                <label>Destination/Property Name: </label>
+                <input class="input" type="text" name="search" value="Egypt">
+                </div>
+                 <div class="formdiv"> 
+                <label>Check-in Date  </label>
+                <input class="input" type="date" name="checkIn" placeholder="Check-in Date">
+                </div>
+                 <div class="formdiv"> 
+                <label>Check-out Date  </label>
+                <input class="input" type="date" name="checkOut" placeholder="Check-out Date">
+                </div>
+                <div>
+                   <table><tr><td colspan="2">
+                       <select name="adults" style="width: 250px;">
+                        <option>1 Adult</option>
+                        <option>2 Adult</option>
+                        <option>3 Adult</option>
+                        <option>4 Adult</option>
+                        <option>5 Adult</option>
+                        <option>6 Adult</option>
+                        <option>7 Adult</option>
+                        <option>8 Adult</option>
+                    </select>
+                   </td></tr>
+                   <tr>
+                       <td><select name="children" style="width: 120px;">
+                        <option>No Children</option>
+                        <option>1 Children</option>
+                        <option>2 Children</option>
+                        <option>3 Children</option>
+                        <option>4 Children</option>
+                        <option>5 Children</option>
+                        <option>6 Children</option>
+                        <option>7 Children</option>
+                        <option>8 Children</option>
+                    </select></td>
+                       <td> <select name="rooms" style="width: 120px;">
+                        <option>1 room</option>
+                        <option>2 room</option>
+                        <option>3 room</option>
+                        <option>4 room</option>
+                        <option>5 room</option>
+                        <option>6 room</option>
+                        <option>7 room</option>
+                        <option>8 room</option>
+                    </select></td>
+                   </tr></table>
+                    
+                </div>
+                <div>
+                <input class="submit input" type="submit" value="Search">
+            </div>
+            </form>
+            </div>
+            <div class="side2">
+                <div class="filter">
+                <p class="filter1"><b>Filter by:</b></p>
+                </div>
+                <div>
+                    <div>
+                        <div class="check">  <h5>Your Budget</h5> </div>
+                          <label class="container2"> EGP 0 - EGP 990 per night
+                              <input type="checkbox" name="check">
+                              <span class="checkmark"></span>
+                            </label>
+
+                            <label class="container2">EGP 990 - EGP 1,900 per night
+                              <input type="checkbox" name="check">
+                              <span class="checkmark"></span>
+                            </label>
+
+                            <label class="container2">EGP 1,900 - EGP 2,900 per night
+                              <input type="checkbox" name="check">
+                              <span class="checkmark"></span>
+                            </label>
+
+                            <label class="container2">EGP 2,900 - EGP 3,900 per night
+                              <input type="checkbox" name="check">
+                              <span class="checkmark"></span>
+                            </label> 
+                             <label class="container2">EGP 3,9000 + per night
+                              <input type="checkbox" name="check">
+                              <span class="checkmark"></span>
+                            </label>
+                    </div>
+                </div>
+                
+            </div>
         </div>
         <div class="results">
             <div class="result">
