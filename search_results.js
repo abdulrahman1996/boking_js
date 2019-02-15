@@ -98,7 +98,7 @@ function showResults() {
         success: function (data) {
 
             
-                 filterdResults = data.filter(hotel => filterArray.every(condition => condition.function(hotel, condition.parameter) == true));
+        filterdResults = data.filter(hotel => filterArray.every(condition => condition.function(hotel, condition.parameter) == true));
             filterdResults.forEach(element => {
                 renderResult(element);
             });
