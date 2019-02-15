@@ -108,12 +108,13 @@ function filterBycity(hotel, city) {
 function filterByAdChild(hotel,adChild)
 {
 
-
         var x =hotel.rooms.length;
- // debugger;
-   return hotel.rooms.some(room=>{adChild.adults==room.type.adults && adChild.children==room.type.children &&adChild.rooms<=x;});
-    //console.log(adChild.adults==room.type.adults && adChild.children==room.type.children)
+
+     if (adChild.children==0 && adChild.adults!=0)
+        return hotel.rooms.some(room=>adChild.adults==room.type.adults &&adChild.rooms<=x);
+    return  hotel.rooms.some(room=> adChild.adults==room.type.adults && adChild.children==room.type.children &&adChild.rooms<=x);
     
+
 }
 
 
