@@ -37,6 +37,7 @@ function renderResult(resultsData) {
 
         }).appendTo('#' + resultsData._id + 'body').text(resultsData.discription);
     }
+}
 
 
 
@@ -137,4 +138,4 @@ function showResults() {
 
         }
     })
-}}
+}   
