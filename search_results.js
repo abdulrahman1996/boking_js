@@ -27,9 +27,9 @@ function renderResult(resultsData) {
         }).appendTo('#' + resultsData._id + 'body').text(resultsData.name);
 
         $('<div/>', {
-                class: 'result-location',
+            class: 'result-location',
 
-            }).appendTo('#' + resultsData._id + 'body')
+        }).appendTo('#' + resultsData._id + 'body')
             .append('<a href="https://www.google.com/maps/@' + resultsData.latitude + ',' + resultsData.longitude + ' ">' + resultsData.city + ' , ' + resultsData.location + '</a>');
 
         $('<div/>', {
@@ -80,19 +80,18 @@ function handelRequest() {
     const adults = urlParams.get('adults');
     const children = urlParams.get('children');
     const rooms = urlParams.get('rooms');
-    if (adults || children)
-    {
+    if (adults || children) {
         filterArray.push({
             function: filterByAdChild,
-            parameter:{
+            parameter: {
                 adults,
                 children,
                 rooms
             }
-            
+
         });
     }
-        showResults();
+    showResults();
 
 
 
@@ -101,7 +100,7 @@ function handelRequest() {
 
 function filterByCheck(hotel, check) {
 
-    return hotel.rooms.some(room => Date.parse(room.avalible_from) > Date.parse(check.check_in) && Date.parse(room.avalible_to) > Date.parse(check.check_out));
+    return hotel.rooms.some(room => Date.parse(room.avalible_from) < Date.parse(check.check_in) && Date.parse(room.avalible_to) > Date.parse(check.check_out));
 }
 
 
@@ -109,15 +108,14 @@ function filterBycity(hotel, city) {
     return hotel.city == city;
 }
 
-function filterByAdChild(hotel,adChild)
-{
+function filterByAdChild(hotel, adChild) {
 
-        var x =hotel.rooms.length;
+    var x = hotel.rooms.length;
 
-     if (adChild.children==0 && adChild.adults!=0)
-        return hotel.rooms.some(room=>adChild.adults==room.type.adults &&adChild.rooms<=x);
-    return  hotel.rooms.some(room=> adChild.adults==room.type.adults && adChild.children==room.type.children &&adChild.rooms<=x);
-    
+    if (adChild.children == 0 && adChild.adults != 0)
+        return hotel.rooms.some(room => adChild.adults == room.type.adults && adChild.rooms <= x);
+    return hotel.rooms.some(room => adChild.adults == room.type.adults && adChild.children == room.type.children && adChild.rooms <= x);
+
 
 }
 
@@ -129,7 +127,7 @@ function showResults() {
         url: "data.json",
 
         success: function (data) {
-             
+
             console.log(filterArray);
             filterdResults = data.filter(hotel => filterArray.every(condition => condition.function(hotel, condition.parameter) == true));
             filterdResults.forEach(element => {
