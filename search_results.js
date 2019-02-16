@@ -55,7 +55,7 @@ function handelRequest() {
     check_in = urlParams.get('checkIn');
     check_out = urlParams.get('checkOut');
 
-/*
+
     const city = urlParams.get('city');
     if (city)
         filterArray.push({
@@ -72,7 +72,7 @@ function handelRequest() {
                 check_out
             }
         });
-*/
+
     const adults = urlParams.get('adults');
     const children = urlParams.get('children');
     const rooms = urlParams.get('rooms');
