@@ -1,9 +1,10 @@
 <html>
 
 <head>
-    
+    <link rel="stylesheet" type="text/css" href="styles.css">
     <style>
-          @import url("pag1.css");
+        @import url("pag1.css");
+
         * {
             padding: 0px;
             margin: 0px;
@@ -18,13 +19,13 @@
             flex: 1;
             left: 0px;
             margin-left: 20px;
-            
+
 
         }
 
         .container {
-           
-            margin-top: 20px; 
+
+            margin-top: 20px;
             display: flex;
             flex-direction: row;
             position: absolute;
@@ -84,19 +85,19 @@
         }
 
         .result-price {
-           margin-top: 50px; 
-           color: rgb(28, 142, 177);
-           
+            margin-top: 50px;
+            color: rgb(28, 142, 177);
+
             flex: 1;
             margin-left: 10px;
-            
+
         }
-        
+
 
         .result-title {
             color: rgb(98, 98, 224);
             font-size: 30px;
-            
+
 
         }
 
@@ -112,7 +113,7 @@
             margin-top: 5px;
 
         }
-        
+
         .sidebar {
             display: flex;
             flex-direction: column;
@@ -123,221 +124,244 @@
             margin-left: 40px;
             margin-top: 10px;
         }
-        .side{
-         background-color: #febb02;
-         border: 2px solid blue;
-        border-radius: 2px;
+
+        .side {
+            background-color: #febb02;
+            border: 2px solid blue;
+            border-radius: 2px;
         }
-        .input{
+
+        .input {
             width: 90%;
-   border-radius: 5px; 
-border-style: none;
-height: 34px;
+            border-radius: 5px;
+            border-style: none;
+            height: 34px;
 
-padding: 5px;
+            padding: 5px;
 
-    padding-left: 5px;
+            padding-left: 5px;
 
-line-height: 22px;
+            line-height: 22px;
 
-font-size: 15px;
+            font-size: 15px;
 
-overflow: hidden;
+            overflow: hidden;
 
-text-overflow: ellipsis;
+            text-overflow: ellipsis;
         }
+
         .submit:hover {
-     background:#003580 ;
-}
-        .submit{
-        padding:5px 15px; 
-         width: 100px;
-         height: 40px;
-      background:#3884ed ;
-        border:0 none;
-        color: white;
-        cursor:pointer;
-        border-radius: 5px; 
-        float: right;
+            background: #003580;
+        }
+
+        .submit {
+            padding: 5px 15px;
+            width: 100px;
+            height: 40px;
+            background: #3884ed;
+            border: 0 none;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            float: right;
             margin: 3px;
-}
+        }
+        input[type="search"]{
+            width: 90%;
+            margin-left: 1px;
+        }
+
         select {
-            
-    height: 35px;
-    font-weight: normal;
-    color: #444;
-    line-height: 1.3;
-    border-radius: 3px;
+
+            height: 35px;
+            font-weight: normal;
+            color: #444;
+            line-height: 1.3;
+            border-radius: 3px;
             border-style: none;
             margin: 2px;
-}
-        #f1{
+        }
+
+        #f1 {
             margin-left: 10px;
         }
-        .formdiv{
+
+        .formdiv {
             margin: 3px;
         }
-        label{
+
+        label {
             font-size: 14px;
         }
-        side2{
+
+        side2 {
             margin: 3px;
             border: 5px solid blue;
         }
-        .filter1{
-            
+
+        .filter1 {
+
             margin: 10px;
         }
-        .filter{border-bottom: 1px solid grey;}
-        .check{
+
+        .filter {
+            border-bottom: 1px solid grey;
+        }
+
+        .check {
             margin: 10px;
             cursor: pointer;
         }
+
         .container2 {
-  display: block;
-  position: relative;
-  padding-left: 35px;
-  margin-bottom: 12px;
-  cursor: pointer;
-  font-size: 16px;
-}
+            display: block;
+            position: relative;
+            padding-left: 35px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            font-size: 16px;
+        }
 
-/* Hide the browser's default checkbox */
-.container2 input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
-}
+        /* Hide the browser's default checkbox */
+        .container2 input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+        }
 
-/* Create a custom checkbox */
-.checkmark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 25px;
-  width: 25px;
-  background-color: #eee;
-}
+        /* Create a custom checkbox */
+        .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 25px;
+            width: 25px;
+            background-color: #eee;
+        }
 
-/* On mouse-over, add a grey background color */
-.container2:hover input ~ .checkmark {
-  background-color: #ccc;
-}
+        /* On mouse-over, add a grey background color */
+        .container2:hover input~.checkmark {
+            background-color: #ccc;
+        }
 
-/* When the checkbox is checked, add a blue background */
-.container2 input:checked ~ .checkmark {
-  background-color: #2196F3;
-}
-
-
-
+        /* When the checkbox is checked, add a blue background */
+        .container2 input:checked~.checkmark {
+            background-color: #2196F3;
+        }
     </style>
 </head>
 
 <body>
-        <header> <a id="h" href="#">Booking.com</a>
-            <input onclick="parent.location='register.html'" class="btn" type="button" value="Register" action="register.html">
-            <input class="btn" type="button" value="Sign In" onclick="parent.location='login.html'">
-        </header>
-          
+    <header> <a id="h" href="#">Booking.com</a>
+        <input onclick="parent.location='register.html'" class="btn" type="button" value="Register"
+            action="register.html">
+        <input class="btn" type="button" value="Sign In" onclick="parent.location='login.html'">
+    </header>
+
     <div class="container">
-           
-        
+
+
         <div class="sidebar">
-        
+
             <div class="side">
-               <form id="f1" action="search_results.html">
+                <form id="f1" action="search_results.html">
 
 
-                
-                <p>Search</p>
-                <div class="formdiv"> 
-                <label>City: </label>
 
-                <input name="city" class="input" type="text"  value="cairo">
-                </div>
-                 <div class="formdiv"> 
-                <label>Check-in Date  </label>
-            
-                <input class="input" type="date" name="checkIn" placeholder="Check-in Date">
-                </div>
-                 <div class="formdiv"> 
-                <label>Check-out Date  </label>
-                <input class="input" type="date" name="checkOut" placeholder="Check-out Date">
-                </div>
-                <div>
-                   <table><tr><td colspan="2">
-                       <select name="adults" style="width: 250px;">
-                        <option value="1">1 Adult</option>
-                        <option value="2">2 Adult</option>
-                        <option value="3">3 Adult</option>
-                        <option value="4">4 Adult</option>
-                        <option value="5">5 Adult</option>
-                        
-                    </select>
-                   </td></tr>
-                   <tr>
-                       <td><select name="children" style="width: 120px;">
-                        <option value="0">No Children</option>
-                        <option value="1">1 Children</option>
-                        <option value="2">2 Children</option>
-                        <option value="3">3 Children</option>
-                        <option value="4">4 Children</option>
-                        <option value="5">5 Children</option>
-                       
-                    </select></td>
-                       <td> 
-                           <select name="rooms" style="width: 120px;">
-                        <option  value="1" selected>1 room</option>
-                        <option value="2">2 room</option>
-                        <option value="3">3 room</option>
-                        <option value="4">4 room</option>
-                        <option value="5">5 room</option>
-                    
-                    </select></td>
-                   </tr></table>
-                    
-                </div>
-                <div>
-                <input class="submit input" type="submit" value="Search">
-            </div>
-            </form>
+                    <p>Search</p>
+                    <div class="formdiv">
+                        <label>City: </label>
+
+                        <input id="autocomplete" name="city" class="input" type="search" placeholder="City">
+                    </div>
+                    <div class="formdiv">
+                        <label>Check-in Date </label>
+
+                        <input class="input" type="date" name="checkIn" placeholder="CheckIn">
+                    </div>
+                    <div class="formdiv">
+                        <label>Check-out Date </label>
+                        <input class="input" type="date" name="checkOut" placeholder="CheckOut">
+                    </div>
+                    <div>
+                        <table>
+                            <tr>
+                                <td colspan="2">
+                                    <select name="adults" style="width: 250px;">
+                                        <option value="1">1 Adult</option>
+                                        <option value="2">2 Adult</option>
+                                        <option value="3">3 Adult</option>
+                                        <option value="4">4 Adult</option>
+                                        <option value="5">5 Adult</option>
+
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><select name="children" style="width: 120px;">
+                                        <option value="0">No Children</option>
+                                        <option value="1">1 Children</option>
+                                        <option value="2">2 Children</option>
+                                        <option value="3">3 Children</option>
+                                        <option value="4">4 Children</option>
+                                        <option value="5">5 Children</option>
+
+                                    </select></td>
+                                <td>
+                                    <select name="rooms" style="width: 120px;">
+                                        <option value="1" selected>1 room</option>
+                                        <option value="2">2 room</option>
+                                        <option value="3">3 room</option>
+                                        <option value="4">4 room</option>
+                                        <option value="5">5 room</option>
+
+                                    </select></td>
+                            </tr>
+                        </table>
+
+                    </div>
+                    <div>
+                        <input class="submit input" type="submit" value="Search">
+                    </div>
+                </form>
             </div>
             <div class="side2">
                 <div class="filter">
-                <p class="filter1"><b>Filter by:</b></p>
+                    <p class="filter1"><b>Filter by:</b></p>
                 </div>
                 <div>
                     <div>
-                        <div class="check">  <h5>Your Budget</h5> </div>
-                          <label class="container2"> EGP 0 - EGP 990 per night
-                              <input type="checkbox" name="check">
-                              <span class="checkmark"></span>
-                            </label>
+                        <div class="check">
+                            <h5>Your Budget</h5>
+                        </div>
+                        <label class="container2"> EGP 0 - EGP 990 per night
+                            <input type="checkbox" name="check">
+                            <span class="checkmark"></span>
+                        </label>
 
-                            <label class="container2">EGP 990 - EGP 1,900 per night
-                              <input type="checkbox" name="check">
-                              <span class="checkmark"></span>
-                            </label>
+                        <label class="container2">EGP 990 - EGP 1,900 per night
+                            <input type="checkbox" name="check">
+                            <span class="checkmark"></span>
+                        </label>
 
-                            <label class="container2">EGP 1,900 - EGP 2,900 per night
-                              <input type="checkbox" name="check">
-                              <span class="checkmark"></span>
-                            </label>
+                        <label class="container2">EGP 1,900 - EGP 2,900 per night
+                            <input type="checkbox" name="check">
+                            <span class="checkmark"></span>
+                        </label>
 
-                            <label class="container2">EGP 2,900 - EGP 3,900 per night
-                              <input type="checkbox" name="check">
-                              <span class="checkmark"></span>
-                            </label> 
-                             <label class="container2">EGP 3,9000 + per night
-                              <input type="checkbox" name="check">
-                              <span class="checkmark"></span>
-                            </label>
+                        <label class="container2">EGP 2,900 - EGP 3,900 per night
+                            <input type="checkbox" name="check">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="container2">EGP 3,9000 + per night
+                            <input type="checkbox" name="check">
+                            <span class="checkmark"></span>
+                        </label>
                     </div>
                 </div>
-                
+
             </div>
         </div>
         <div class="results">
@@ -356,7 +380,7 @@ text-overflow: ellipsis;
                     </div>
                 </div>
                 <div class="result-price">
-                    21323 EGP 
+                    21323 EGP
                 </div>
 
             </div>
@@ -367,6 +391,8 @@ text-overflow: ellipsis;
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script src="jquery-3.3.1.js"></script>
+    <script src="jquery.autocomplete.min.js"></script>
     <script src="search_results.js"> </script>
 </body>
 

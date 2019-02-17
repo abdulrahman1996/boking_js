@@ -150,3 +150,22 @@ function showResults() {
         }
     })
 }   
+
+
+    var arr=[];
+    function ajax(){
+     return $.ajax({
+          method:"GET",
+          url:"data.json",
+          statusCode:{200:function(e){
+          for(i in e)
+              { 
+                  arr.push(e[i].city);
+              }
+          }}
+      });
+        
+      
+           };
+           $.when(ajax()).done(function(){  let City = [...new Set(arr)];$('#autocomplete').autocomplete(
+            {lookup:City})});
