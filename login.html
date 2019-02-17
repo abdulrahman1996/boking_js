@@ -153,8 +153,19 @@
 </body>
     <script>
            document.querySelector("[type='submit']").onclick = function() {
-            var txt = document.querySelector("input[type=email]").value;
-            localStorage.setItem("email", txt);
+            var emailTxt = document.querySelector("input[type=email]").value;
+            var passwordTxt = document.querySelector("input[type=password]").value;
+            
+               
+            var users = JSON.parse(localStorage.users);
+               var u=users.find(e=> e.email == emailTxt && e.password==passwordTxt)
+               if(u)
+                {
+                    console.log(u);
+                 alert ("hello "+u.userName)  ; 
+                }
+           
+           
            }
     </script>
 </html>

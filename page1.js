@@ -1,6 +1,6 @@
 $(function(){
     var images=["download%20(2).jpg","download%20(3).jpg","download%20(4).jpg","images.jpg","download%20(1).jpg"];
-            console.log(images);
+           
 
     $("#nextimg").click(function(){
         console.log(images);

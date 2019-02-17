@@ -144,14 +144,14 @@
         <div id="part2">
             <h2>Register new Member</h2>
 
-            <form action="pag1.html">
+            <form >
              <input type="text" placeholder="User Name" required>
                <br>
                 <input type="email" placeholder="Email" required>
                 <br>
                 <input type="password" placeholder="Password" required>
                 <br>
-                <input type="submit" value="Register">
+                <input type="button" onclick="regist()" value="Register">
                 <br>
             </form>
         </div>
@@ -160,23 +160,37 @@
     
 </body>
     <script>
+        
         function store(data) {
-            var a=[];
-            a = JSON.parse(localStorage.getItem('uesrs'));
+            //debugger;
+             a=[];
+            if(localStorage.getItem('users') !=null)
+            {
+               
+                a=JSON.parse(localStorage.users);
+            }
+            
             a.push(data);
             alert(a);  
-            localStorage.setItem('users', JSON.stringify(a));
+            localStorage.setItem('users' , JSON.stringify( a));
+            
            }
-           document.querySelector("[type='submit']").onclick = function() {
+        
+        
+        
+        
+          function regist()  {
+            data={} ;
             var _userName= document.querySelector("input[type=text]").value;
             var _email = document.querySelector("input[type=email]").value;
             var _password= document.querySelector("input[type=password]").value;
-            
-       //  localStorage.setItem('users', JSON.stringify(arr));
-            var arr=[_userName,_email,_password];
-               consol.log(arr);
-               store(arr);
-               alert('thanks for your registeration');
+            data.userName = _userName;
+            data.email = _email ; 
+            data.password = _password;
+                console.log(data);
+               
+               store(data);
+             //  alert('thanks for your registeration');
            }
     </script>
 </html>

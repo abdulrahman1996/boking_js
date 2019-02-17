@@ -1,5 +1,5 @@
 function renderResult(resultsData) {
-
+    
 
     if ($("#" + resultsData._id).length == 0) {
         jQuery('<div/>', {
@@ -92,27 +92,31 @@ function handelRequest() {
         });
     }
     
-    var prices=document.getElementsByClassName("container2");
-    prices.addEventListener('click',function(e)){
-      for(price in prices){
-          if(price.value){
-        filterArray.push({
-            function: filterByPrice,
-            parameter: price.value
+    Array.from(document.querySelectorAll(".checked")).forEach(e=>{
+        e.addEventListener('change' , r=>{
+            if(filterArray.find(e=>e.parameter ==r.target.value))
+                {
+                    var index =filterArray.findIndex(e=>e.parameter ==r.target.value );
+                    filterArray.splice(index , 1);
+                }
+            else
+                filterArray.push({
+                function: filterByPrice,
+                parameter:  r.target.value
+                }); 
+            
+            showResults();
         });
-      }
-    // price= urlParams.get('price');
-    }
-}
+    });
+    
+
     
     
     showResults();
 
-
-
 }
 
-function filterByPrice(hotel, check){
+function filterByPrice(hotel, price){
     return hotel.rooms.some(room=> room.price < price);
     
 }
@@ -145,7 +149,7 @@ function showResults() {
         url: "data.json",
 
         success: function (data) {
-
+            $('.results').empty();
 //           data = JSON.parse(data)
             filterdResults = data.filter(hotel => filterArray.every(condition => condition.function(hotel, condition.parameter) == true));
             filterdResults.forEach(element => {
