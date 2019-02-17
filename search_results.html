@@ -84,8 +84,14 @@
         }
 
         .result-price {
+           margin-top: 50px; 
+           color: rgb(28, 142, 177);
+           
             flex: 1;
+            margin-left: 10px;
+            
         }
+        
 
         .result-title {
             color: rgb(98, 98, 224);
@@ -242,17 +248,19 @@ text-overflow: ellipsis;
         <div class="sidebar">
         
             <div class="side">
-               <form id="f1" action="">
+               <form id="f1" action="search_results.html">
 
 
                 
                 <p>Search</p>
                 <div class="formdiv"> 
-                <label>Destination/Property Name: </label>
-                <input class="input" type="text" name="search" value="Egypt">
+                <label>City: </label>
+
+                <input name="city" class="input" type="text"  value="cairo">
                 </div>
                  <div class="formdiv"> 
                 <label>Check-in Date  </label>
+            
                 <input class="input" type="date" name="checkIn" placeholder="Check-in Date">
                 </div>
                  <div class="formdiv"> 
@@ -262,37 +270,32 @@ text-overflow: ellipsis;
                 <div>
                    <table><tr><td colspan="2">
                        <select name="adults" style="width: 250px;">
-                        <option>1 Adult</option>
-                        <option>2 Adult</option>
-                        <option>3 Adult</option>
-                        <option>4 Adult</option>
-                        <option>5 Adult</option>
-                        <option>6 Adult</option>
-                        <option>7 Adult</option>
-                        <option>8 Adult</option>
+                        <option value="1">1 Adult</option>
+                        <option value="2">2 Adult</option>
+                        <option value="3">3 Adult</option>
+                        <option value="4">4 Adult</option>
+                        <option value="5">5 Adult</option>
+                        
                     </select>
                    </td></tr>
                    <tr>
                        <td><select name="children" style="width: 120px;">
-                        <option>No Children</option>
-                        <option>1 Children</option>
-                        <option>2 Children</option>
-                        <option>3 Children</option>
-                        <option>4 Children</option>
-                        <option>5 Children</option>
-                        <option>6 Children</option>
-                        <option>7 Children</option>
-                        <option>8 Children</option>
+                        <option value="0">No Children</option>
+                        <option value="1">1 Children</option>
+                        <option value="2">2 Children</option>
+                        <option value="3">3 Children</option>
+                        <option value="4">4 Children</option>
+                        <option value="5">5 Children</option>
+                       
                     </select></td>
-                       <td> <select name="rooms" style="width: 120px;">
-                        <option>1 room</option>
-                        <option>2 room</option>
-                        <option>3 room</option>
-                        <option>4 room</option>
-                        <option>5 room</option>
-                        <option>6 room</option>
-                        <option>7 room</option>
-                        <option>8 room</option>
+                       <td> 
+                           <select name="rooms" style="width: 120px;">
+                        <option  value="1" selected>1 room</option>
+                        <option value="2">2 room</option>
+                        <option value="3">3 room</option>
+                        <option value="4">4 room</option>
+                        <option value="5">5 room</option>
+                    
                     </select></td>
                    </tr></table>
                     
@@ -353,7 +356,7 @@ text-overflow: ellipsis;
                     </div>
                 </div>
                 <div class="result-price">
-                    width
+                    21323 EGP 
                 </div>
 
             </div>

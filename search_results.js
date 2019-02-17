@@ -1,11 +1,11 @@
 function renderResult(resultsData) {
 
-
+  
     if ($("#" + resultsData._id).length == 0) {
         jQuery('<div/>', {
             class: 'result',
             id: resultsData._id,
-        }).appendTo('.results');
+        }).appendTo('.results')
 
 
 
@@ -32,11 +32,18 @@ function renderResult(resultsData) {
         }).appendTo('#' + resultsData._id + 'body')
             .append('<a href="https://www.google.com/maps/@' + resultsData.latitude + ',' + resultsData.longitude + ' ">' + resultsData.city + ' , ' + resultsData.location + '</a>');
 
+
         $('<div/>', {
             class: 'result-discription',
 
         }).appendTo('#' + resultsData._id + 'body').text(resultsData.discription);
-    }
+
+        
+        $('<div/>', {
+            class: 'result-price',
+
+        }).appendTo('#' + resultsData._id ).text('from ' +resultsData.rooms[1].price + ' EGP for one night') ;
+    } 
 }
 
 
@@ -69,6 +76,7 @@ function handelRequest() {
 
 
     if (check_in && check_out)
+    {
         filterArray.push({
             function: filterByCheck,
             parameter: {
@@ -76,7 +84,9 @@ function handelRequest() {
                 check_out
             }
         });
-
+        
+    }
+        
     const adults = urlParams.get('adults');
     const children = urlParams.get('children');
     const rooms = urlParams.get('rooms');
@@ -129,10 +139,13 @@ function showResults() {
         success: function (data) {
 
             console.log(filterArray);
+            
             filterdResults = data.filter(hotel => filterArray.every(condition => condition.function(hotel, condition.parameter) == true));
-            filterdResults.forEach(element => {
-                renderResult(element);
-            });
+           
+            filterdResults.forEach(element  => {
+               
+                renderResult(element) 
+            }) 
 
         }
     })
