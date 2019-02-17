@@ -91,13 +91,31 @@ function handelRequest() {
 
         });
     }
+    
+    var prices=document.getElementsByClassName("container2");
+    prices.addEventListener('click',function(e)){
+      for(price in prices){
+          if(price.value){
+        filterArray.push({
+            function: filterByPrice,
+            parameter: price.value
+        });
+      }
+    // price= urlParams.get('price');
+    }
+}
+    
+    
     showResults();
 
 
 
 }
 
-
+function filterByPrice(hotel, check){
+    return hotel.rooms.some(room=> room.price < price);
+    
+}
 function filterByCheck(hotel, check) {
 
     return hotel.rooms.some(room => Date.parse(room.avalible_from) < Date.parse(check.check_in) && Date.parse(room.avalible_to) > Date.parse(check.check_out));
@@ -128,7 +146,7 @@ function showResults() {
 
         success: function (data) {
 
-            console.log(filterArray);
+//           data = JSON.parse(data)
             filterdResults = data.filter(hotel => filterArray.every(condition => condition.function(hotel, condition.parameter) == true));
             filterdResults.forEach(element => {
                 renderResult(element);
