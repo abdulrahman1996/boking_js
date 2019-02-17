@@ -1,304 +1,277 @@
-  * {
-      padding: 0px;
-      margin: 0px;
+* {
+    padding: 0px;
+    margin: 0px;
 
-  }
+}
 
-  body {
-      font-family: arial;
-  }
+body {
+    font-family: arial;
+}
 
-  #h {
+#h {
 
-      display: inline;
-      padding: 100px;
-      margin-top: 20px;
+    display: inline;
+    padding: 100px;
+    margin-top: 20px;
 
-      text-decoration: none;
-      color: white;
-      font-size: 20pt;
-      font-weight: bold;
+    text-decoration: none;
+    color: white;
+    font-size: 20pt;
+    font-weight: bold;
 
-  }
-
-
+}
 
 
-  header {
 
-      box-sizing: border-box;
-      width: 100%;
-      height: 120px;
-      background-color: darkblue;
-      color: white;
-        position: fixed; 
-        top: 0px;
-       
-        z-index: 100; 
+
+header {
+
+    box-sizing: border-box;
+    width: 100%;
+    height: 120px;
+    background-color: darkblue;
+    color: white;
+
+
+}
+
+.btn {
+    cursor: pointer;
+    background-color: white;
+    border: none;
+    position: relative;
+    left: 800px;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+    width: 70px;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.words {
+    margin-left: 100px;
+}
+
+.words span h3: {
+
+    font-size: 18pt;
+}
+
+.words span:nth-child(2) {
+    font-size: 14pt;
+}
+
+input[type="search"] {
+    font-size: 16px;
+    border: 2px solid darkorange;
+    padding: 10px;
+    margin-left: 100px;
+    background-image: url("images.png");
+    background-size: 20px;
+    background-position: left;
+    background-repeat: no-repeat;
+    text-indent: 10px;
+    width: 400px;
+    border-radius: 7px;
+
+    box-shadow: 1px 1px 5px 1px darkorange;
+
+
+
+}
+
+input[type="search"] :focus {
+    background-image: none;
+
+}
+
+input[type="date"] {
+    border: 2px solid darkorange;
+    border-radius: 7px;
+    box-shadow: 1px 1px 5px 1px darkorange;
+
+
+
+}
+
+input[type="date"]:before {
+    width: 90px;
+    padding: 10px;
+
+    content: attr(placeholder) !important;
+    color: dimgrey;
+    background-image: url("calendar-512.png");
+    background-size: 20px;
+    background-position: left;
+    background-repeat: no-repeat;
+    text-indent: 10px;
+
+
+}
+
+
+#searchbtn {
+    padding: 10px;
+    width: 100px;
+    height: 40px;
+    margin: auto;
+    border-radius: 7px;
+    background-color: darkblue;
+    color: white;
+    cursor: pointer;
+    border: 2px solid darkorange;
+    box-shadow: 1px 1px 5px 1px darkorange;
+}
+
+
+
+.images img {
+
+    height: 150px;
+    width: 320px;
+
+
+}
+
+.images {
+    margin-left: 130px;
+}
+
+.images input {
+    background-color: white;
+    width:50px;
+    position: absolute;
+    cursor: pointer;
+    top: 580px;
+    left: 1120px;
+    border-radius: 50%
         
+}
 
-  }
+.images input:nth-child(1) {
+    left: 100px;
+}
 
-  .btn {
-      cursor: pointer;
-      background-color: white;
-      border: none;
-      position: relative;
-      left: 800px;
-      text-align: center;
-      border-radius: 5px;
-      padding: 5px;
-      width: 70px;
-      margin-top: 15px;
-      font-weight: bold;
-  }
+.images input:nth-child(6) {
+    left: 1330px;
+}
 
-  .words {
-      margin-left: 100px;
-  }
+.new {
+    margin-top: 50px;
+}
 
-  .words span h3: {
+#ad {
+    position: absolute;
+    left: 1400px;
+    border: 2px solid black;
+}
 
-      font-size: 18pt;
-  }
+#vid {
+    background-color: aliceblue;
+}
 
-  .words span:nth-child(2) {
-      font-size: 14pt;
-  }
+video {
+    border: 2px solid black;
+    margin-left: 100px;
 
-  input[placeholder="where are you going?"] {
-      border: 2px solid darkorange;
-      padding: 10px;
-      margin-left: 100px;
-      background-image: url("images.png");
-      background-size: 20px;
-      background-position: left;
-      background-repeat: no-repeat;
-      text-indent: 10px;
-      width: 400px;
-      border-radius: 7px;
+}
 
-      box-shadow: 1px 1px 5px 1px darkorange;
+.dd {
+    margin: 10px;
+    width: 20px;
 
+}
 
+@keyframes myAnimation {
+    100% {
 
-  }
+        box-shadow: 2px 2px 5px 2px cadetblue;
 
-  input[placeholder="where are you going?"]:focus {
-      background-image: none;
+    }
+}
 
-  }
+.images span img:hover {
+    animation-name: myAnimation;
+    animation-iteration-count: 5;
+    animation-duration: 1s;
 
-  input[type="date"] {
-      border: 2px solid darkorange;
-      border-radius: 7px;
-      box-shadow: 1px 1px 5px 1px darkorange;
+}
 
+#bluediv {
+    background-color: aliceblue;
+    height: 300px;
+}
 
+.w {
+    margin-top:
+}
 
-  }
+/* Dropdown Button */
+.dropbtn {
+    padding: 10px;
+    border: 2px solid darkorange;
+    box-shadow: 1px 1px 5px 1px darkorange;
 
-  input[type="date"]:before {
-      width: 90px;
-      padding: 10px;
+    background-image: url("person.png");
+    background-size: 20px;
+    background-position: left;
+    background-repeat: no-repeat;
+    text-indent: 10px;
+    border-radius: 7px;
 
-      content: attr(placeholder) !important;
-      color: dimgrey;
-      background-image: url("calendar-512.png");
-      background-size: 20px;
-      background-position: left;
-      background-repeat: no-repeat;
-      text-indent: 10px;
+    background-color: white;
+    width: 190px;
+    color: gray;
+    padding: 10px;
+    font-size: 12px;
 
+}
 
-  }
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
 
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
 
-  #searchbtn {
-      padding: 10px;
-      width: 100px;
-      height: 40px;
-      margin: auto;
-      border-radius: 7px;
-      background-color: darkblue;
-      color: white;
-      cursor: pointer;
-      border: 2px solid darkorange;
-      box-shadow: 1px 1px 5px 1px darkorange;
-  }
+footer :nth-child(1) {
+    font-size: 10pt;
+    position: absolute;
+    left: 1280px;
+    bottom: auto;
+}
 
-
-
-  .images img {
-
-      height: 150px;
-      width: 320px;
-
-
-  }
-
-  .images {
-      margin-left: 130px;
-  }
-
-  .images input {
-      background-color: white;
-      width:50px;
-      position: absolute;
-      cursor: pointer;
-      top: 580px;
-      left: 1120px;
-      border-radius: 50%
-            padding: 0px;
-            margin: 0px;
-            font-family: 'Arial'
-        }
-            body
-            {
-                font-family:arial;
-            }
-          #h
-            {
-               
-               display: inline;
-                padding: 100px;
-                margin-top:20px;
-                
-                text-decoration: none;
-                color: white;
-                font-size: 20pt;
-                font-weight: bold;
-
-            }
-
-           
-            
-          
-  }
-
-  .images input:nth-child(1) {
-      left: 100px;
-  }
-
-  .images input:nth-child(6) {
-      left: 1330px;
-  }
-
-  .new {
-      margin-top: 50px;
-  }
-
-  #ad {
-      position: absolute;
-      left: 1400px;
-      border: 2px solid black;
-  }
-
-  #vid {
-      background-color: aliceblue;
-  }
-
-  video {
-      border: 2px solid black;
-      margin-left: 100px;
-
-  }
-
-  .dd {
-      margin: 10px;
-      width: 20px;
-
-  }
-
-  @keyframes myAnimation {
-      100% {
-
-          box-shadow: 2px 2px 5px 2px cadetblue;
-
-      }
-  }
-
-  .images span img:hover {
-      animation-name: myAnimation;
-      animation-iteration-count: 5;
-      animation-duration: 1s;
-
-  }
-
-  #bluediv {
-      background-color: aliceblue;
-      height: 300px;
-  }
-
-  .w {
-      margin-top:
-  }
-
-  /* Dropdown Button */
-  .dropbtn {
-      padding: 10px;
-      border: 2px solid darkorange;
-      box-shadow: 1px 1px 5px 1px darkorange;
-
-      background-image: url("person.png");
-      background-size: 20px;
-      background-position: left;
-      background-repeat: no-repeat;
-      text-indent: 10px;
-      border-radius: 7px;
-
-      background-color: white;
-      width: 190px;
-      color: gray;
-      padding: 10px;
-      font-size: 12px;
-
-  }
-
-  .dropdown {
-      position: relative;
-      display: inline-block;
-  }
-
-  .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: white;
-      min-width: 160px;
-      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-      z-index: 1;
-  }
-
-  footer :nth-child(1) {
-      font-size: 10pt;
-      position: absolute;
-      left: 1280px;
-      bottom: auto;
-  }
+.dropdown-content a:hover {
+    background-color: aliceblue;
+}
 
 
+.dropdown:hover .dropdown-content {
+    display: block;
+}
 
-  .dropdown:hover .dropdown-content {
-      display: block;
-  }
+.dropdown:hover .dropbtn {
+    background-color: white;
+}
 
-  .dropdown:hover .dropbtn {
-      background-color: white;
-  }
- .acr 
-        {
-            display: inline-block;
-        }
 
 .acrin
 {
-    width:50px;
-    position: relative;
-    left: 60px;
+  width :30px;
+  position: relative;
+  left: 80px;
 }
-
 input[name=Room]
 {
+ 
+left :67px;
   
-    left: 48px;
 }
