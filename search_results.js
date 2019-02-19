@@ -16,6 +16,38 @@ function renderResult(resultsData) {
             value: resultsData._id , 
             name: '_id'
         }).appendTo('#' + resultsData._id);
+        
+        $('<input>', {
+            type: 'hidden',
+            value: rooms , 
+            name: 'Room'
+        }).appendTo('#' + resultsData._id);
+
+        $('<input>', {
+            type: 'hidden',
+            value: adults , 
+            name: 'adults'
+        }).appendTo('#' + resultsData._id);
+
+        $('<input>', {
+            type: 'hidden',
+            name: 'children' , 
+            value: children ,
+        }).appendTo('#' + resultsData._id);
+
+        $('<input>', {
+            type: 'hidden',
+            name: 'chick_in' , 
+            value: check_in ,
+        }).appendTo('#' + resultsData._id);
+
+        $('<input>', {
+            type: 'hidden',
+            name: 'check_out' , 
+            value: check_out ,
+        }).appendTo('#' + resultsData._id);
+
+
 
 
         $('<img>', {
@@ -61,12 +93,6 @@ function renderResult(resultsData) {
             })
         );
 
-        // $('<input>', {
-        //     type: 'submit',
-        //     value: 'show ' , 
-        //     class :'result-button'
-        // }).appendTo('#' + resultsData._id)
-
     }
 }
 
@@ -108,9 +134,10 @@ function handelRequest() {
 
     }
 
-    const adults = urlParams.get('adults');
-    const children = urlParams.get('children');
-    const rooms = urlParams.get('rooms');
+     adults = urlParams.get('adults');
+     children = urlParams.get('children');
+    rooms = urlParams.get('Room');
+    console.log(check_in , check_out  , rooms , adults , children);
     if (adults || children) {
         filterArray.push({
             function: filterByAdChild,

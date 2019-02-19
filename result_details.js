@@ -3,7 +3,7 @@ renderHotel();
 function renderHotel() {
 
     const urlParams = new URLSearchParams(window.location.search);
-    const id = urlParams.get('_id');
+    id = urlParams.get('_id');
 
     requestHotel(id);
 }
@@ -17,10 +17,14 @@ function requestHotel(id) {
                 hotel = data.find(e => e._id == id);
                 renderDetails(hotel);
                 // renderGalary(hotel); abeer
+                
             }
         }
     )
 }
+
+
+
 
 function renderDetails(hotel) {
 
@@ -35,20 +39,48 @@ function renderDetails(hotel) {
 
     }).appendTo('.hotel-details .cr').text(hotel.discription + hotel.discription)
 
-    // enable only avilable dates 
-    var startDate = "2014-06-15", // some start date
-        endDate = "2014-06-21",  // some end date
-        dateRange = [];           // array to hold the range
+    
+    
 
-    // populate the array
-    for (var d = new Date(startDate); d <= new Date(endDate); d.setDate(d.getDate() + 1)) {
-        dateRange.push($.datepicker.formatDate('yy-mm-dd', d));
-    }
 
-    // use this array 
-    beforeShowDay: function s (date) {
-        var dateString = jQuery.datepicker.formatDate('yy-mm-dd', date);
-        return [dateRange.indexOf(dateString) == -1];
-    }
 }
+
+$("#to-date").change(()=>{
+
+    var from = $("#from-date").val(); 
+    var to = $("#to-date").val(); 
+    console.log(from  , to);
+
+    var diffrence = Date.parse(to) - Date.parse(from);
+    var diffrenceDay = diffrence /( 1000 *60*60*24) ; 
+    $("#roomCount").text(diffrenceDay * hotel.rooms[0].price + " EGP");    
+
+})
+
+$("#reserve").click(function () {
+
+    users = JSON.parse(localStorage.users);
+    userIndex = users.findIndex(u => u.email == localStorage.mail);
+    if (userIndex == -1) {
+        alert("please register first");
+        window.location.replace("register.html");
+    }
+    else {
+        var reserveD = { id: id, date: new Date() };
+        users[userIndex].reservation == null ?
+            users[userIndex].reservation = [reserveD] :
+            users[userIndex].reservation.push(reserveD);
+        localStorage.users = JSON.stringify(users);
+        $("body").empty();
+        $("body").text("redirect to home ...")
+        setTimeout(() => {
+
+            window.location.replace("pag1.html");
+
+        }, 3000)
+    }
+
+
+
+});
 

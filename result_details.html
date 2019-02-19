@@ -1,8 +1,9 @@
 <html>
     <head>
         <style>
+        
             *{
-                font-family: 'Arial'
+                font-family: 'Arial';
             }
         .galary{
             width: 1000px;
@@ -44,8 +45,38 @@
             height: 300px;
             background-color: aquamarine;
         }
-        
-        
+        [type = date]{
+
+           margin: 15px;
+           padding: 10px;
+           border-radius: 15px;
+           background-color: #3884ed;
+           width: 150px;    
+           font-size: 15px;
+
+        }
+        [type = date]:hover{
+            background: #003580;
+        }
+        [type = button]{
+            padding: 10px;;
+            width: 100px;
+            height: 40px;
+            background: white;
+            border: 0 none;
+            background-color: white;
+            cursor: pointer;
+            color: black;
+            font-weight:  bold; 
+            border-radius: 5px;
+            float: right;
+            margin: 3px;
+            
+        }
+        [type=button]:hover{
+            background: orange;
+        }
+       
         </style>
     </head>
     <body>
@@ -61,10 +92,11 @@
             </div>
             
             <div class="hotel-reserve">
-                <input type="date" >
-                <input type="date" >
-
-                <input  type="button" class="reserve btn " value="reserve now" >
+                
+                <input type="date"  id="from-date">
+                <input type="date" id="to-date"> 
+                <div id="roomCount"> dd </div>
+                <input  type="button" id="reserve" class="reserve btn " value="reserve now" >
             </div>
             <div>
 
@@ -72,7 +104,6 @@
         </div>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js    "></script>
-                
                 <script src="result_details.js"></script>
     </body>
 </html>
