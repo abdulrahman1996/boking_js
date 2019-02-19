@@ -268,10 +268,13 @@
 </head>
 
 <body>
+     
     <header> <a id="h" href="#">Booking.com</a>
-        <input onclick="parent.location='register.html'" class="btn" type="button" value="Register"
-            action="register.html">
-        <input class="btn" type="button" value="Sign In" onclick="parent.location='login.html'">
+        <input  onclick="parent.location='register.html'" class="btn hid" type="button" value="Register" action="register.html">
+        <input  class="btn hid" type="button" value="Sign In" onclick="parent.location='login.html'" >  
+        <br>
+         <p id="wel" href="profilepage.html"></p>
+
     </header>
 
     <div class="container">
@@ -402,11 +405,13 @@
         </div>
 
     </div>
-
+   
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
     <script src="jquery-3.3.1.js"></script>
+ 
     <script src="jquery.autocomplete.min.js"></script>
     <script src="search_results.js"> </script>
+        <script src="afterLogin.js"></script>
 </body>
 
 </html>

@@ -1,7 +1,9 @@
+
 $(function(){
     var images=["download%20(2).jpg","download%20(3).jpg","download%20(4).jpg","images.jpg","download%20(1).jpg"];
-           
-
+//    localStorage.removeItem('logged');
+//localStorage.removeItem('user');
+    
     $("#nextimg").click(function(){
         console.log(images);
        document.images[0].src=images[0];
@@ -11,6 +13,7 @@ $(function(){
        
         images.push(x.toString());
         
+   
     });
   
       var arr=[];
@@ -30,5 +33,10 @@ $(function(){
                    };
             $.when(ajax()).done(function(){  let City = [...new Set(arr)];$('#autocomplete').autocomplete(
                 {lookup:City})});
+    
+    $("#x").click(function(){
+      $("#ad").hide();
+        
+    });
                 
 });

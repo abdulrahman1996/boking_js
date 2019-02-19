@@ -56,6 +56,7 @@
       margin-top: 15px;
       font-weight: bold;
   }
+        
             
     #container
             {
@@ -122,12 +123,21 @@
                 background-repeat: no-repeat;
               text-indent: 30px;
 }
+        
+        input[value="LOGIN"],input[value="Sign In"]
+        {
+            background-color:green;
+            color: white;
+            cursor:pointer;
+        }
            
         </style>
+        <script src="jquery-3.3.1.js"></script>
+        <script src="login.js"></script>
 </head>
 
 <body>
-    <header> <a id="h" href="#">Booking.com</a>
+    <header> <a id="h" href="pag1.html">Booking.com</a>
         <input onclick="parent.location='register.html'" class="btn" type="button" value="Register" action="register.html">
         <input class="btn" type="button" value="Sign In" onclick="parent.location='login.html'">
     </header>
@@ -138,12 +148,12 @@
         <div id="part2">
             <h2>Member Login</h2>
 
-            <form action="pag1.html">
-                <input type="email" placeholder="Email" required>
+            <form >
+                <input id="mail" type="email" placeholder="Email" required>
                 <br>
-                <input type="password" placeholder="Password" required>
+                <input id="pass" type="password" placeholder="Password" required>
                 <br>
-                <input type="submit" value="LOGIN">
+                <input id="log" type="button" value="LOGIN">
                 <br>
             </form>
         </div>
@@ -151,7 +161,8 @@
     </div>
     
 </body>
-    <script>
+    <!-- <script>
+        /*
            document.querySelector("[type='submit']").onclick = function() {
             var emailTxt = document.querySelector("input[type=email]").value;
             var passwordTxt = document.querySelector("input[type=password]").value;
@@ -161,11 +172,14 @@
                var u=users.find(e=> e.email == emailTxt && e.password==passwordTxt)
                if(u)
                 {
-                    console.log(u);
-                 alert ("hello "+u.userName)  ; 
+                 alert ("hello "+u.userName); 
                 }
+               else
+                   {
+                     alert("please register first");  
+                   }
            
            
-           }
-    </script>
+           }*/
+    </script>-->
 </html>

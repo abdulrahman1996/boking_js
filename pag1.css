@@ -13,14 +13,13 @@ body {
     display: inline;
     padding: 100px;
     margin-top: 20px;
-
+ 
     text-decoration: none;
     color: white;
     font-size: 20pt;
     font-weight: bold;
 
 }
-
 
 
 
@@ -34,7 +33,18 @@ header {
 
 
 }
-
+.btn:hover
+{
+  background-color: darkorange;  
+    color: white;
+}
+header p
+{
+    position: absolute;
+    left:1200px;  
+    font-weight: bold;
+    
+}
 .btn {
     cursor: pointer;
     background-color: white;
@@ -162,18 +172,32 @@ input[type="date"]:before {
 }
 
 #ad {
-    position: absolute;
-    left: 1400px;
+  
     border: 2px solid black;
+    width:500px;
+    height: 370px;
+    margin-top: 80px;
+    margin-left: 80px;
+    background-image: url('265-swimming-pool-6-hotel-barcelo-costa-cancun_tcm21-28336.jpg');
+     background-size: cover;
+    background-position: center;
+}
+
+#ad:hover
+{
+    background-image: url('download9.jpg');
+
 }
 
 #vid {
     background-color: aliceblue;
+    display: flex;
 }
 
 video {
     border: 2px solid black;
     margin-left: 100px;
+    margin-top: 20px;
 
 }
 
@@ -274,4 +298,33 @@ input[name=Room]
  
 left :67px;
   
+}
+
+#wel
+{
+   font-size: 10pt;
+    color: white;
+    font-weight: bold;
+    margin-top: -20px;
+    margin-left: 20px;
+}
+
+#wel:hover
+{
+    
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+#x
+{
+    background-color: red;
+    border: none;
+    width:30px;
+    height: 30px;
+    cursor: pointer;
+    margin-top: none;
+    margin-left: 470px;
+    font-weight: bold;
 }
