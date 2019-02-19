@@ -10,15 +10,21 @@
     <script src="jquery-3.3.1.js"></script>
     <script src="jquery.autocomplete.min.js"></script>
     <link rel="stylesheet" type="text/css" href="styles.css">
+
     <script src="page1.js"></script>
+    
+      
 </head>
 
 <body>
     <!--  <div id="header">-->
     <header> <a id="h" href="#">Booking.com</a>
-        <input onclick="parent.location='register.html'" class="btn" type="button" value="Register" action="register.html">
-        <input class="btn" type="button" value="Sign In" onclick="parent.location='login.html'">
-    </header>
+     
+        <input  onclick="parent.location='register.html'" class="btn hid" type="button" value="Register" action="register.html">
+        <input  class="btn hid" type="button" value="Sign In" onclick="parent.location='login.html'" >  
+        <br>
+         <p id="wel"></p>
+            </header>
 
 
 
@@ -48,7 +54,7 @@
                     <button class="dropbtn">Adults-Children-Rooms &#9679;</button>
                     <div id="myDropdown" class="dropdown-content">
                         <label class="acr">Adult</label>
-                        <input class="acrin" type="number" name="adults" pattern="[1-9] " value="1">
+                        <input class="acrin" type="number" name="adults" pattern="[1-9] " value="2">
                         <br>
                         <label class="acr">Child </label>
                         <input class="acrin" type="number" name="children" pattern="[0-9] "  value="0"> 
@@ -56,14 +62,6 @@
 
                         <label class="acr">Rooms</label>
                         <input class="acrin" type="number" name="Room" pattern="[1-9] " value="1">
-                        <!--
-                        <label>Adult </label> <span><input class="dd" type="button" value="-"> <label>1</label> <input type="button" class="dd dd2" value="+"></span>
-                        <br>
-                        <label>Child</label> <span><input class="dd" type="button" value="-"> <label>0</label> <input type="button" class="dd dd2" value="+"></span>
-                        <br>
-                        <label>Room</label> <span><input class="dd" type="button" value="-"> <label>1</label> <input type="button" class="dd dd2" value="+"></span>
-                        <br>
-                       -->
                     </div>
                 </div>
                 <input type="submit" value="Search" id='searchbtn'>
@@ -80,25 +78,26 @@
     <br>
 
     <div class="images">
-        <span><a href="https://atpi.eventsair.com/QuickEventWebsitePortal/icso-2018/icso/ExtraContent/ContentSubPage?page=6&subPage=1" target='_blank'><img id="i1" src="download%20(1).jpg"></a></span>
-        <span><a href="https://thinkmarketingmagazine.com/eye-opener-grand-hotel-series-awaken-influence-drama-tourism-marketing/" target='_blank'><img id="i1" src="download%20(2).jpg"></a></span>
+        <span><a href="https://atpi.eventsair.com/QuickEventWebsitePortal/icso-2018/icso/ExtraContent/ContentSubPage?page=6&subPage=1" target='_blank'><img  id="i" src="download%20(1).jpg"></a></span>
+        <span><a href="https://thinkmarketingmagazine.com/eye-opener-grand-hotel-series-awaken-influence-drama-tourism-marketing/" target='_blank'><img  id="i1" src="download%20(2).jpg"></a></span>
         <span><a href="https://www.dusit.com/?utm_source=affilired&_affclk=adn:3817::Cj0KCQiAkfriBRD1ARIsAASKsQKm_M7U8e15vlqS93BzrHwxuJreXqiUB47MkisxIjagB1lQLzC93VYaAsQ9EALw_wcB:8002y1" target='_blank'><img id="i2" src="download%20(3).jpg"></a></span>
 
         <input id="nextimg" type="button" value=">">
 
     </div>
-
-    <div id="vid">
+   <div id="vid">
+    <div>
         <p class="words new"><b>Learn more about Hotels in Egypt</b></p>
         <video src="videoplayback.mp4" controls></video>
-        <!--
+        
         </div>
-        <div id="ad"width=200 height=200  ><input type="button" value="x"></div>
--->
+        <div id="ad"><div id="im"></div><input type="button" id="x" value="x"></div>
+</div>
         <footer>
             <a href="https://en.wikipedia.org/wiki/Booking.com" target="_blank"> About us</a>
         </footer>
-
+        <script src="afterLogin.js">
+        </script>
 </body>
 
 </html>
