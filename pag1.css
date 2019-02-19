@@ -306,7 +306,7 @@ left :67px;
     color: white;
     font-weight: bold;
     margin-top: -20px;
-    margin-left: 20px;
+    margin-left: 10px;
 }
 
 #wel:hover
@@ -316,7 +316,11 @@ left :67px;
     cursor: pointer;
 }
 
-
+#hid
+{
+    margin-left: 100px;
+    margin-top: -100px;
+}
 #x
 {
     background-color: red;

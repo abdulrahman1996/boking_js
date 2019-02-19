@@ -1,9 +1,6 @@
 
 $(function(){
     var images=["download%20(2).jpg","download%20(3).jpg","download%20(4).jpg","images.jpg","download%20(1).jpg"];
-//    localStorage.removeItem('logged');
-//localStorage.removeItem('user');
-    
     $("#nextimg").click(function(){
         console.log(images);
        document.images[0].src=images[0];
@@ -14,6 +11,14 @@ $(function(){
         images.push(x.toString());
         
    
+    });
+    $('#hid').click(function(){
+        alert('thanks you '+localStorage.user+' for your visit!');
+       localStorage.removeItem('user');
+       localStorage.removeItem('logged');
+    
+       localStorage.removeItem('mail');
+        window.open('pag1.html',"_self");
     });
   
       var arr=[];

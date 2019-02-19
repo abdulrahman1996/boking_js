@@ -1,8 +1,6 @@
 
 $(function(){
       
-      
-      
 
       $('#log').click(function(){
            var users = JSON.parse(localStorage.users);
@@ -20,7 +18,8 @@ $(function(){
                 }
                else
                    {
-                   // b=false;
+                       localStorage.img='blank-profile-picture-973460_960_720.png';
+               
                         localStorage.removeItem('logged');
                        localStorage.removeItem('user');
                      alert("please register first");  
