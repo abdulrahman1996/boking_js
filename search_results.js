@@ -1,14 +1,21 @@
 function renderResult(resultsData) {
-    
 
 
-  
+
+
     if ($("#" + resultsData._id).length == 0) {
-        jQuery('<div/>', {
+
+        jQuery('<form/>', {
+            action :'result_details.html',
             class: 'result',
             id: resultsData._id,
         }).appendTo('.results')
 
+        $('<input>', {
+            type: 'hidden',
+            value: resultsData._id , 
+            name: '_id'
+        }).appendTo('#' + resultsData._id);
 
 
         $('<img>', {
@@ -40,12 +47,27 @@ function renderResult(resultsData) {
 
         }).appendTo('#' + resultsData._id + 'body').text(resultsData.discription);
 
-        
+
+
         $('<div/>', {
             class: 'result-price',
 
-        }).appendTo('#' + resultsData._id ).text('from ' +resultsData.rooms[1].price + ' EGP for one night') ;
-    } 
+        }).appendTo('#' + resultsData._id).text('from ' + resultsData.rooms[1].price + ' EGP for one night').append(
+            $('<input>', {
+                type: 'submit',
+                value: 'show datails',
+                class: 'result-button'
+                
+            })
+        );
+
+        // $('<input>', {
+        //     type: 'submit',
+        //     value: 'show ' , 
+        //     class :'result-button'
+        // }).appendTo('#' + resultsData._id)
+
+    }
 }
 
 
@@ -67,8 +89,6 @@ function handelRequest() {
     const urlParams = new URLSearchParams(window.location.search);
     check_in = urlParams.get('checkIn');
     check_out = urlParams.get('checkOut');
-
-
     const city = urlParams.get('city');
     if (city)
         filterArray.push({
@@ -77,8 +97,7 @@ function handelRequest() {
         });
 
 
-    if (check_in && check_out)
-    {
+    if (check_in && check_out) {
         filterArray.push({
             function: filterByCheck,
             parameter: {
@@ -86,9 +105,9 @@ function handelRequest() {
                 check_out
             }
         });
-        
+
     }
-        
+
     const adults = urlParams.get('adults');
     const children = urlParams.get('children');
     const rooms = urlParams.get('rooms');
@@ -103,34 +122,33 @@ function handelRequest() {
 
         });
     }
-    
-    Array.from(document.querySelectorAll(".checked")).forEach(e=>{
-        e.addEventListener('change' , r=>{
-            if(filterArray.find(e=>e.parameter ==r.target.value))
-                {
-                    var index =filterArray.findIndex(e=>e.parameter ==r.target.value );
-                    filterArray.splice(index , 1);
-                }
+
+    Array.from(document.querySelectorAll(".checked")).forEach(e => {
+        e.addEventListener('change', r => {
+            if (filterArray.find(e => e.parameter == r.target.value)) {
+                var index = filterArray.findIndex(e => e.parameter == r.target.value);
+                filterArray.splice(index, 1);
+            }
             else
                 filterArray.push({
-                function: filterByPrice,
-                parameter:  r.target.value
-                }); 
-            
+                    function: filterByPrice,
+                    parameter: r.target.value
+                });
+
             showResults();
         });
     });
-    
 
-    
-    
+
+
+
     showResults();
 
 }
 
-function filterByPrice(hotel, price){
-    return hotel.rooms.some(room=> room.price < price);
-    
+function filterByPrice(hotel, price) {
+    return hotel.rooms.some(room => room.price < price);
+
 }
 function filterByCheck(hotel, check) {
 
@@ -157,38 +175,42 @@ function filterByAdChild(hotel, adChild) {
 handelRequest();
 
 function showResults() {
+
     $.ajax({
         url: "data.json",
 
         success: function (data) {
             $('.results').empty();
-//           data = JSON.parse(data)
+            //           data = JSON.parse(data)
             filterdResults = data.filter(hotel => filterArray.every(condition => condition.function(hotel, condition.parameter) == true));
-           
-            filterdResults.forEach(element  => {
-               
-                renderResult(element) 
-            }) 
+
+            filterdResults.forEach(element => {
+
+                renderResult(element)
+            })
 
         }
     })
-}   
+}
 
 
-    var arr=[];
-    function ajax(){
-     return $.ajax({
-          method:"GET",
-          url:"data.json",
-          statusCode:{200:function(e){
-          for(i in e)
-              { 
-                  arr.push(e[i].city);
-              }
-          }}
-      });
-        
-      
-           };
-           $.when(ajax()).done(function(){  let City = [...new Set(arr)];$('#autocomplete').autocomplete(
-            {lookup:City})});
+var arr = [];
+function ajax() {
+    return $.ajax({
+        method: "GET",
+        url: "data.json",
+        statusCode: {
+            200: function (e) {
+                for (i in e) {
+                    arr.push(e[i].city);
+                }
+            }
+        }
+    });
+
+
+};
+$.when(ajax()).done(function () {
+    let City = [...new Set(arr)]; $('#autocomplete').autocomplete(
+        { lookup: City })
+});
