@@ -351,3 +351,28 @@ left :67px;
    margin-top: 100px;
     margin-left: 100px;
 }
+
+
+
+#bar
+{
+    background-color: orange;
+    text-align: center;
+ 
+}
+#bar a 
+{
+    padding: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 12pt;
+    color: darkblue;
+}
+
+#bar a:hover
+{
+  
+    color: white;
+}
+
