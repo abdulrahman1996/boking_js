@@ -4,6 +4,7 @@ function renderHotel() {
 
     const urlParams = new URLSearchParams(window.location.search);
     id = urlParams.get('_id');
+    price = urlParams.get('price');
 
     requestHotel(id);
 }
@@ -53,11 +54,14 @@ $("#to-date").change(()=>{
 
     var diffrence = Date.parse(to) - Date.parse(from);
     var diffrenceDay = diffrence /( 1000 *60*60*24) ; 
-    $("#roomCount").text(diffrenceDay * hotel.rooms[0].price + " EGP");    
+    pay = diffrenceDay *price+ " EGP";
+    $("#roomCount").text(pay);   
+    $("#reserve").removeAttr("disabled");        
 
 })
 
 $("#reserve").click(function () {
+  
 
     users = JSON.parse(localStorage.users);
     userIndex = users.findIndex(u => u.email == localStorage.mail);
@@ -71,6 +75,7 @@ $("#reserve").click(function () {
             users[userIndex].reservation = [reserveD] :
             users[userIndex].reservation.push(reserveD);
         localStorage.users = JSON.stringify(users);
+        alert("" +pay )
         $("body").empty();
         $("body").text("redirect to home ...")
         setTimeout(() => {

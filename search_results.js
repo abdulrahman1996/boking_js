@@ -1,8 +1,9 @@
-function renderResult(resultsData) {
+priceGlobal = 10000;
+function renderResult(resultsData , room) {
 
 
 
-
+    
     if ($("#" + resultsData._id).length == 0) {
 
         jQuery('<form/>', {
@@ -16,7 +17,15 @@ function renderResult(resultsData) {
             value: resultsData._id , 
             name: '_id'
         }).appendTo('#' + resultsData._id);
+
         
+        $('<input>', {
+            type: 'hidden',
+            value: room.room.price , 
+            name: 'price'
+        }).appendTo('#' + resultsData._id);
+
+
         $('<input>', {
             type: 'hidden',
             value: rooms , 
@@ -84,7 +93,7 @@ function renderResult(resultsData) {
         $('<div/>', {
             class: 'result-price',
 
-        }).appendTo('#' + resultsData._id).text('from ' + resultsData.rooms[1].price + ' EGP for one night').append(
+        }).appendTo('#' + resultsData._id).text('from ' + room.room.price + ' EGP for one night').append(
             $('<input>', {
                 type: 'submit',
                 value: 'show datails',
@@ -157,10 +166,14 @@ function handelRequest() {
                 filterArray.splice(index, 1);
             }
             else
+            {
+                priceGlobal =  r.target.value ; 
                 filterArray.push({
                     function: filterByPrice,
-                    parameter: r.target.value
+                    parameter: priceGlobal
                 });
+            }
+                
 
             showResults();
         });
@@ -208,12 +221,15 @@ function showResults() {
 
         success: function (data) {
             $('.results').empty();
+            
             //           data = JSON.parse(data)
-            filterdResults = data.filter(hotel => filterArray.every(condition => condition.function(hotel, condition.parameter) == true));
+            filterdResults = data.filter(hotel =>  filterArray.every(condition => condition.function(hotel, condition.parameter) == true) );
+            filterRooms = [];
+            filterdResults.forEach(r => filterRooms.push( { id: r._id   , room : r. rooms.find(room => room.price <=priceGlobal )}))
 
-            filterdResults.forEach(element => {
+            filterdResults.forEach((element , i )=> {
 
-                renderResult(element)
+                renderResult(element  , filterRooms[i] )
             })
 
         }

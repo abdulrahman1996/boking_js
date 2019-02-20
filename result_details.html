@@ -4,6 +4,7 @@
         
             *{
                 font-family: 'Arial';
+                background-color: aliceblue;
             }
         .galary{
             width: 1000px;
@@ -12,9 +13,12 @@
             border: 1px solid black;
         }  
         .hotel-details{
+            background-color: white;
+            border-radius: 10px;
             display: flex;
             flex-direction: row;
-            border: 1px solid black;
+            
+            border: 1px solid gray;;
            
             width: 1000px;
             margin: auto; 
@@ -41,9 +45,10 @@
             text-align: justify;
         }
         .hotel-reserve{
+            border-radius: 10px;
             flex: 1;
             height: 300px;
-            background-color: aquamarine;
+            background-color: rgb(168, 240, 250);
         }
         [type = date]{
 
@@ -53,6 +58,7 @@
            background-color: #3884ed;
            width: 150px;    
            font-size: 15px;
+             
 
         }
         [type = date]:hover{
@@ -60,27 +66,38 @@
         }
         [type = button]{
             padding: 10px;;
-            width: 100px;
-            height: 40px;
+            width: 130px;
+            height: 60px;
             background: white;
             border: 0 none;
             background-color: white;
             cursor: pointer;
             color: black;
+            
             font-weight:  bold; 
             border-radius: 5px;
-            float: right;
-            margin: 3px;
+            
+            margin-left: 25px;
             
         }
         [type=button]:hover{
             background: orange;
         }
+
+        [type=button]:disabled{
+            background: gray;
+        }
+
+        #roomCount{
+            width: 100px;
+            margin: auto;
+            margin-bottom:40px; 
+        }
        
         </style>
     </head>
     <body>
-
+      
 
         <div class="galary">
 
@@ -95,8 +112,9 @@
                 
                 <input type="date"  id="from-date">
                 <input type="date" id="to-date"> 
-                <div id="roomCount"> dd </div>
-                <input  type="button" id="reserve" class="reserve btn " value="reserve now" >
+                <!-- <div id="roomCount"></div> -->
+                
+                <input  type="button" id="reserve"  value="reserve now"  disabled >
             </div>
             <div>
 
