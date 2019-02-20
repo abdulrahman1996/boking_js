@@ -128,6 +128,9 @@
                 background-repeat: no-repeat;
               text-indent: 30px;
 }
+         input:invalid{
+            border-color: red;
+        }
            
         </style>
 </head>
@@ -142,17 +145,25 @@
             <img id="logimg" src="register.png" height="300" width="200">
         </div>
         <div id="part2">
-            <h2>Register new Member</h2>
+           
 
-            <form>
-             <input type="text" placeholder="UserName" required autocomplete="off">
-               <br>
-                <input type="email" placeholder="Email" required autocomplete="off">
-                <br>
-                <input type="password" placeholder="Password" required autocomplete="off">
-                <br>
-                <input type="button" onclick="regist()" value="Register">
-                <br>
+            <form action="login.html">
+                 <h2>Register new Member</h2>
+                <div>
+                <input type="text" placeholder="UserName" autocomplete="off" required>
+                    </div>
+                <div>
+                 <input type="Email" placeholder="Enter your Email" autocomplete="off" required>
+                    </div>
+                <!--<input type="email" placeholder="Email" required autocomplete="off" pattern="/^([a-z]+@(hotmail|gmail)\.+com)$/">
+                -->
+                <div>
+                <input type="password" placeholder="Password" pattern="[0-9 ]{5}"  autocomplete="off" required>
+                </div>
+                <div>
+                <input type="submit" id="reg" value="Register" id="reg">
+                
+                </div>
             </form>
         </div>
     
@@ -160,7 +171,7 @@
     
 </body>
     <script>
-        
+       
         function store(data) {
            
              a=[];
@@ -171,6 +182,7 @@
           
             if(! a.some(e=>e.email==data.email))
                 {
+                    alert("welcome "+data.userName);
             a.push(data);
             localStorage.setItem('users' , JSON.stringify( a));
                 }
@@ -180,26 +192,23 @@
                 }
              localStorage.setItem('img','blank-profile-picture-973460_960_720.png')
            }
-        
-        
-        
-        
+       
           function regist()  {
+             
             data={} ;
             var _userName= document.querySelector("input[type=text]").value;
             var _email = document.querySelector("input[type=email]").value;
             var _password= document.querySelector("input[type=password]").value;
+
             data.userName = _userName;
             data.email = _email ; 
             data.password = _password;
-              _userName="";
-              _email="";
-              _password="";
-            alert("welcome "+data.userName);
-               
                store(data);
-              window.open('login.html','_self');
+             // window.open('login.html','_self');
             
            }
+         document.querySelector('form').addEventListener('submit',function(e){
+            regist();
+        });
     </script>
 </html>
