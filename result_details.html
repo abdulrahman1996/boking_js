@@ -1,71 +1,82 @@
 <html>
-    <head>
-        <style>
-        
-            *{
-                font-family: 'Arial';
-                background-color: aliceblue;
-            }
-        .galary{
+
+<head>
+    <style>
+        * {
+            font-family: 'Arial';
+            background-color: aliceblue;
+        }
+
+        .galary {
             width: 1000px;
-            height: 600px;
+            height: 400px;
             margin: auto;
-            border: 1px solid black;
-        }  
-        .hotel-details{
+           
+        }
+
+        .hotel-details {
             background-color: white;
             border-radius: 10px;
             display: flex;
             flex-direction: row;
-            
-            border: 1px solid gray;;
-           
+
+            border: 1px solid gray;
+            ;
+
             width: 1000px;
-            margin: auto; 
+            margin: auto;
             margin-top: 50px;
 
-        } 
-        .cr{
+        }
+
+        .cr {
             display: block;
             flex: 4;
         }
-        .hotel-name{
-          
+
+        .hotel-name {
+
             margin-left: 20px;
             font-size: 20px;
             padding: 10px;
             color: rgb(98, 98, 224);
             flex: 5;
-            
-        } 
-        .hotel-description{
+
+        }
+
+        .hotel-description {
             margin: 20px;
             padding: 10px;
-            margin-right:50px; 
+            margin-right: 50px;
             text-align: justify;
         }
-        .hotel-reserve{
+
+        .hotel-reserve {
             border-radius: 10px;
             flex: 1;
             height: 300px;
             background-color: rgb(168, 240, 250);
         }
-        [type = date]{
 
-           margin: 15px;
-           padding: 10px;
-           border-radius: 15px;
-           background-color: #3884ed;
-           width: 150px;    
-           font-size: 15px;
-             
+        [type=date] {
+
+            margin: 15px;
+            padding: 10px;
+            border-radius: 15px;
+            background-color: #3884ed;
+            width: 150px;
+            font-size: 15px;
+
 
         }
-        [type = date]:hover{
+
+        [type=date]:hover {
             background: #003580;
         }
-        [type = button]{
-            padding: 10px;;
+
+        [type=button] {
+            padding: 10px;
+            ;
             width: 130px;
             height: 60px;
             background: white;
@@ -73,55 +84,74 @@
             background-color: white;
             cursor: pointer;
             color: black;
-            
-            font-weight:  bold; 
+
+            font-weight: bold;
             border-radius: 5px;
-            
+
             margin-left: 25px;
-            
+
         }
-        [type=button]:hover{
+
+        [type=button]:hover {
             background: orange;
         }
 
-        [type=button]:disabled{
+        [type=button]:disabled {
             background: gray;
         }
 
-        #roomCount{
+        #roomCount {
             width: 100px;
             margin: auto;
-            margin-bottom:40px; 
+            margin-bottom: 40px;
         }
-       
-        </style>
-    </head>
-    <body>
-      
 
-        <div class="galary">
+        #myimg {
+            width: 1000px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 15px;
 
+        }
+
+        #myimg:hover {
+            width: 1050px;
+            height: 620px;
+            border-radius: 20px;
+            transition: 2s;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="galary">
+        <img id="myimg" src="https://r-ec.bstatic.com/images/hotel/max1024x768/118/118750378.jpg">
+        <!--        <img id="btn2" style="width:50px" src="right.png" >-->
+
+    </div>
+    <div class="hotel-details">
+        <div class="cr">
 
         </div>
-        <div class="hotel-details">
-            <div class="cr">
-                    
-            </div>
-            
-            <div class="hotel-reserve">
-                
-                <input type="date"  id="from-date">
-                <input type="date" id="to-date"> 
-                <!-- <div id="roomCount"></div> -->
-                
-                <input  type="button" id="reserve"  value="reserve now"  disabled >
-            </div>
-            <div>
 
-            </div>
+        <div class="hotel-reserve">
+
+            <input type="date" id="from-date">
+            <input type="date" id="to-date">
+            <!-- <div id="roomCount"></div> -->
+
+            <input type="button" id="reserve" value="reserve now" disabled>
         </div>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js    "></script>
-                <script src="result_details.js"></script>
-    </body>
+        <div>
+
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js    "></script>
+    <script src="result_details.js"></script>
+    
+</body>
+
 </html>

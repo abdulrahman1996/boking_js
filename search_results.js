@@ -257,3 +257,4 @@ $.when(ajax()).done(function () {
     let City = [...new Set(arr)]; $('#autocomplete').autocomplete(
         { lookup: City })
 });
+
