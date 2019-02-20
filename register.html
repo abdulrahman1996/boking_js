@@ -4,133 +4,7 @@
     <title>Register Page</title>
     <style>
 
-        * {
-      padding: 0px;
-      margin: 0px;
-
-  }
-
-  body {
-      font-family: arial;
-      background-color: darkblue;
-  }
-
-  #h {
-
-      display: inline;
-      padding: 100px;
-      margin-top: 20px;
-
-      text-decoration: none;
-      color: white;
-      font-size: 20pt;
-      font-weight: bold;
-
-  }
-
-
-
-
-  header {
-
-      box-sizing: border-box;
-      width: 100%;
-      height: 120px;
-      background-color: darkblue;
-      color: white;
-
-
-  }
-
-  .btn {
-      cursor: pointer;
-      background-color: white;
-      border: none;
-      position: relative;
-      left: 800px;
-      text-align: center;
-      border-radius: 5px;
-      padding: 5px;
-      width: 70px;
-      margin-top: 15px;
-      font-weight: bold;
-  }
-            
-    #container
-            {
-               
-                border:2px solid black;
-                margin: auto;
-                border-radius: 7px;
-                width: 900px;
-                height: 500px;
-                background-color: white;
-                display: flex;
-                flex-flow: nowrap;
-            }
-            #logimg
-            {
-                margin-top :50px;
-                margin-left :50px;
-            }
-            h2
-            {
-                margin-top:50px;
-                margin-left: 200px;
-            }
-            #part2 form
-            {
-                margin-top: 20px;
-            }
-            #part2 form input
-            {
-                margin-top: 30px;
-                margin-left: 200px;
-                width: 250px;
-                height: 40px;
-                border-radius: 20px;
-                font-weight: bold;
-                border: none;
-                
-
-               
-            }
-            input[value="Register"]
-            {
-                background-color: forestgreen;
-                color: white;
-            }
-            input[type="email"],input[type="password"],input[type="text"]
-            {
-                background-color: gainsboro;
-                color: black;
-            }
-        input[type="text"]{
-            background-image: url(person.png);
-            background-size: 20px;
-                background-position: left;
-                background-repeat: no-repeat;
-              text-indent: 30px;
-        }
-            input[type="email"]
-            {
-                background-image: url("download.png");
-                background-size: 20px;
-                background-position: left;
-                background-repeat: no-repeat;
-              text-indent: 30px;
-}
-        input[type="password"]
-            {
-                background-image: url("download.jpg");
-                background-size: 20px;
-                background-position: left;
-                background-repeat: no-repeat;
-              text-indent: 30px;
-}
-         input:invalid{
-            border-color: red;
-        }
+    @import url("register.css")
            
         </style>
 </head>
@@ -155,8 +29,6 @@
                 <div>
                  <input type="Email" placeholder="Enter your Email" autocomplete="off" required>
                     </div>
-                <!--<input type="email" placeholder="Email" required autocomplete="off" pattern="/^([a-z]+@(hotmail|gmail)\.+com)$/">
-                -->
                 <div>
                 <input type="password" placeholder="Password" pattern="[0-9 ]{5}"  autocomplete="off" required>
                 </div>
@@ -170,44 +42,8 @@
     </div>
     
 </body>
-    <script>
+    <script src="register.js">
        
-        function store(data) {
-           
-             a=[];
-            if(localStorage.getItem('users') !=null)
-            { 
-                a=JSON.parse(localStorage.users);  
-            }
-          
-            if(! a.some(e=>e.email==data.email))
-                {
-                    alert("welcome "+data.userName);
-            a.push(data);
-            localStorage.setItem('users' , JSON.stringify( a));
-                }
-            else
-                {
-                    alert("you already have profile")
-                }
-             localStorage.setItem('img','blank-profile-picture-973460_960_720.png')
-           }
-       
-          function regist()  {
-             
-            data={} ;
-            var _userName= document.querySelector("input[type=text]").value;
-            var _email = document.querySelector("input[type=email]").value;
-            var _password= document.querySelector("input[type=password]").value;
-
-            data.userName = _userName;
-            data.email = _email ; 
-            data.password = _password;
-               store(data);
-            
-           }
-         document.querySelector('form').addEventListener('submit',function(e){
-            regist();
-        });
+      
     </script>
 </html>
