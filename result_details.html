@@ -11,7 +11,7 @@
             width: 1000px;
             height: 400px;
             margin: auto;
-           
+
         }
 
         .hotel-details {
@@ -54,7 +54,7 @@
         .hotel-reserve {
             border-radius: 10px;
             border-top-left-radius: 0px;
-            border-bottom-left-radius:0px;  
+            border-bottom-left-radius: 0px;
             flex: 1;
             height: 300px;
             background-color: orange;
@@ -79,7 +79,7 @@
 
         [type=button] {
             padding: 10px;
-            
+
             width: 130px;
             height: 40px;
             background: white;
@@ -92,12 +92,13 @@
             border-radius: 5px;
 
             margin-left: 25px;
-            margin-top:80px; 
+            margin-top: 80px;
 
         }
 
         [type=button]:hover {
-            background: blue;;
+            background: blue;
+            ;
         }
 
         [type=button]:disabled {
@@ -129,33 +130,38 @@
 
 <body>
 
+    <div class="container">
 
-    <div class="galary">
-        <img id="myimg" src="https://r-ec.bstatic.com/images/hotel/max1024x768/118/118750378.jpg">
-        <!--        <img id="btn2" style="width:50px" src="right.png" >-->
 
-    </div>
-    <div class="hotel-details">
-        <div class="cr">
+
+
+        <div class="galary">
+            <img id="myimg" src="https://r-ec.bstatic.com/images/hotel/max1024x768/118/118750378.jpg">
+            <!--        <img id="btn2" style="width:50px" src="right.png" >-->
 
         </div>
+        <div class="hotel-details">
+            <div class="cr">
 
-        <div class="hotel-reserve">
+            </div>
 
-            <input type="date" id="from-date">
-            <input type="date" id="to-date">
-            <!-- <div id="roomCount"></div> -->
+            <div class="hotel-reserve">
 
-            <input type="button" id="reserve" value="reserve now" disabled>
-        </div>
-        <div>
+                <input type="date" id="from-date">
+                <input type="date" id="to-date">
+                <!-- <div id="roomCount"></div> -->
 
+                <input type="button" id="reserve" value="reserve now" disabled>
+            </div>
+            <div>
+
+            </div>
         </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js    "></script>
     <script src="result_details.js"></script>
-    
+
 </body>
 
 </html>
