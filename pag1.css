@@ -332,3 +332,22 @@ left :67px;
     margin-left: 470px;
     font-weight: bold;
 }
+
+.add1
+{
+    width:400px;
+    height: 100px;
+    border: 2px solid black;
+    margin-left: 100px;
+}
+#cpy
+{
+    margin-left: 100px;
+}
+
+
+#po
+{
+   margin-top: 100px;
+    margin-left: 100px;
+}

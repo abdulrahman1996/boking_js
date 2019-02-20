@@ -5,6 +5,12 @@
     <style>
         @import url("pag1.css");
 
+          
+#po
+{
+   margin-top: 100px;
+    margin-left: 100px;
+}
         * {
             padding: 0px;
             margin: 0px;
@@ -269,13 +275,16 @@
 
 <body>
      
-    <header> <a id="h" href="#">Booking.com</a>
+      <header> <a id="h" href="pag1.html">Booking.com</a>
+     
         <input  onclick="parent.location='register.html'" class="btn hid" type="button" value="Register" action="register.html">
         <input  class="btn hid" type="button" value="Sign In" onclick="parent.location='login.html'" >  
-        <br>
-         <p id="wel" href="profilepage.html"></p>
+                <input  id="hid" class="btn" type="button" value="LogOut" > 
 
-    </header>
+        <br>
+     
+         <p id="wel"></p>
+           </header>
 
     <div class="container">
 
@@ -284,8 +293,6 @@
 
             <div class="side">
                 <form id="f1" action="search_results.html">
-
-
 
                     <p>Search</p>
                     <div class="formdiv">
@@ -396,7 +403,7 @@
                     </div>
                 </div>
                 <div class="result-price">
-                    21323 EGP
+                
                 </div>
 
             </div>
@@ -405,13 +412,14 @@
         </div>
 
     </div>
-   
+ 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
     <script src="jquery-3.3.1.js"></script>
  
     <script src="jquery.autocomplete.min.js"></script>
     <script src="search_results.js"> </script>
         <script src="afterLogin.js"></script>
+       
 </body>
 
 </html>

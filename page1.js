@@ -16,7 +16,6 @@ $(function(){
         alert('thanks you '+localStorage.user+' for your visit!');
        localStorage.removeItem('user');
        localStorage.removeItem('logged');
-    
        localStorage.removeItem('mail');
         window.open('pag1.html',"_self");
     });
