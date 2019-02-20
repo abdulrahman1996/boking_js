@@ -22,10 +22,12 @@
  $('#hid').click(function(){
        if(localStorage.user)
            {
-                localStorage.removeItem('user');
+alert('thanks '+localStorage.user+' for your visit!');               
+        localStorage.removeItem('user');
        localStorage.removeItem('logged');
        localStorage.removeItem('mail');
         window.open('pag1.html',"_self");
+        localStorage.img='blank-profile-picture-973460_960_720.png'
            }
       
     });

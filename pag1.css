@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: arial;
+    font-family: "Arial";
 }
 
 #h {
@@ -353,6 +353,8 @@ left :67px;
 #cpy
 {
     margin-left: 100px;
+  
+    margin-top: 10px;
 }
 
 
@@ -369,6 +371,12 @@ left :67px;
     background-color: orange;
     text-align: center;
  
+}
+#foot
+{
+    
+ background-color: black;
+    color: white;
 }
 #bar a 
 {

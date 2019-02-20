@@ -12,13 +12,14 @@ $(function(){
         
    
     });
-    $('#hid').click(function(){
-        alert('thanks '+localStorage.user+' for your visit!');
-       localStorage.removeItem('user');
-       localStorage.removeItem('logged');
-       localStorage.removeItem('mail');
-        window.open('pag1.html',"_self");
-    });
+//    $('#hid').click(function(){
+//        debugger;
+//    alert('thanks '+localStorage.user+' for your visit!');
+//       localStorage.removeItem('user');
+//       localStorage.removeItem('logged');
+//       localStorage.removeItem('mail');
+//        window.open('pag1.html',"_self");
+//    });
   
       var arr=[];
             function ajax(){
