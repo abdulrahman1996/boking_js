@@ -13,7 +13,7 @@ $(function(){
    
     });
     $('#hid').click(function(){
-        alert('thanks you '+localStorage.user+' for your visit!');
+        alert('thanks '+localStorage.user+' for your visit!');
        localStorage.removeItem('user');
        localStorage.removeItem('logged');
        localStorage.removeItem('mail');

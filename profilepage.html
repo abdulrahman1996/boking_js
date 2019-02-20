@@ -5,299 +5,76 @@
         User Profile
     </title>
 <style>
-    *
-    {
-        margin: 0;
-        padding: 0;
-    }
-    body {
-        background-color: white;
-    }
-
-    #wel {
-        font-size: 20pt;
-        color: white;
-        font-weight: bold;
-        margin-top: -20px;
-        margin-left: 20px;
-    }
-
-    #wel:hover {
-        background-color: orange;
-        text-decoration: underline;
-        cursor: pointer;
-    }
-
-   #h {
-
-    display: inline;
-    padding: 100px;
-    margin-top: 20px;
- 
-    text-decoration: none;
-    color: white;
-    font-size: 20pt;
-    font-weight: bold;
-
-}
-
-
-
-header {
-
-    box-sizing: border-box;
-    width: 100%;
-    height: 120px;
-    background-color: darkblue;
-    color: white;
-
-
-}
-    .btn:hover {
-        background-color: darkorange;
-        color: white;
-    }
-
-    header p {
-        position: absolute;
-        left: 1200px;
-        font-weight: bold;
-
-    }
-
-    #container {
-        width: 700px;
-        height: 600px;
-        margin-top: 10px;
-        background-color: white;
-        margin: auto;
-        margin-left: 10px;
+  @import url("profilepage.css")</style>
     
-     
-    }
+<script>
+    window.addEventListener('load', function() {
+        document.getElementById('imgdiv').style.backgroundImage = "url(" + localStorage.img + ")";
 
-    #imgdiv {
-        width: 250px;
-        height: 200px;
-        margin: auto;
-        margin-top: 20px;
-        background-image: url('blank-profile-picture-973460_960_720.png');
-        background-size: cover;
-        background-position: center;
-        border-radius: 50%;
-    }
-
-    #imgdiv img {
-        width: 100%;
-        height: 100%;
-
-    }
-
-    #imgbtn {
-        margin: auto;
-        width: 250px;
-        height: 30px;
-        border-radius: 50px;
-        margin-top: 10px;
-        border: 2px solid green;
-        background-color: green;
-        color: white;
-        text-align: center;
-        font-size: 12pt;
-        font-weight: bold;
-        padding: 2px;
-       
-
-    }
-
-    input[type='file'] {
-
-        opacity: 0;
-    }
-    
-    
-    table
-    {
-        margin: auto;
-        
-    }
-    
-    table td
-    {
-        padding:10px;
- 
-    
-    }
-    table td:nth-child(1)
-    {
-        font-weight: bold;
-    
-    }
-   
-    #home
-    {
-        margin-left:650px;
-        margin-top: 150px;
-    }
-    
-   footer :nth-child(1) {
-    font-size: 10pt;
-    position: absolute;
-    left: 1280px;
-    bottom: auto;
-    color: white;
-}
-    #left
-    {
-        width:300px;
-        height:600px;
-       
-        background-color: white;
-        background-image: url('caijw-plateau-0210-hor-feat.jpg');
-        background-size:cover;
-        background-position: center;
-        
-    }
-    #left:hover
-    {
-          background-image: url('cairo--290692-12.jpg');
-    }
-    #right
-    {
-        width:300px;
-        height:600px;
-       
-        background-color: white;
-        background-image: url('377-swimming-pool-2-occidental-hotel-el-embajador_tcm21-37747.jpg');
-        background-size:cover;
-        background-position: center;
-    }
-    
-     #right:hover
-    {
-          background-image: url('332-swimming-pool-3-hotel-barcelo-cairo-pyramids_tcm20-8796.jpg');
-    }
-    #main
-    {
-       display: flex; 
-       
-    }
-    .btn {
-    cursor: pointer;
-    background-color: white;
-    border: none;
-    position: relative;
-    left: 800px;
-    text-align: center;
-    border-radius: 5px;
-    padding: 5px;
-    width: 100px;
-    margin-top: 15px;
-    font-weight: bold;
-}
-    .btn:hover
-{
-  background-color: darkorange;  
-    color: white;
-}
-    
-    #bar
-{
-    background-color: orange;
-    text-align: center;
- 
-}
-#bar a 
-{
-    padding: 50px;
-    text-decoration: none;
-    font-weight: bold;
-    cursor: pointer;
-    font-size: 14pt;
-    color: darkblue;
-}
-
-#bar a:hover
-{
-  
-    color: white;
-}
-
-
-</style>
-    
-    <script>
-        window.addEventListener('load',function(){
-          document.getElementById('imgdiv').style.backgroundImage = "url(" + localStorage.img + ")";
-
-        });
-        
-          </script>
+    });
+</script>
 </head>
 
 <body>
-    <header> <a id="h" href="#">Booking.com</a>
-            
-        <input  onclick="parent.location='pag1.html'" class="btn" type="button" value="Home Page">
-    </header>
+<header> <a id="h" href="pag1.html">Booking.com</a>
 
-     
-    <div id="bar">
-         <a href="pag1.html" target="_self">Home</a>
-       <a href="https://en.wikipedia.org/wiki/Booking.com" target="_self">about us</a>
-       <a>complain</a>
-       <a href="profilepage.html">Profile</a>
-        
-    </div>
-    <div id="main">
+ 
+</header>
+
+
+<div id="bar">
+    <a href="pag1.html" target="_self">Home</a>
+    <a href="https://en.wikipedia.org/wiki/Booking.com" target="_self">about us</a>
+    <a href="profilepage.html">Profile</a>
+
+</div>
+<div id="main">
     <div id="left">
-        </div>
+    </div>
     <div id="container">
         <div id="row1">
-    <div id="imgdiv" >
-      
-        </div>
-        <div id="imgbtn">
-        <label  for="iamgbtn"> upload a photo</label>
-             </div>
-        <input  id="iamgbtn" name="background-image" type="file">
-          </div> 
-        <table>
-            <tr><td><label>UserName:</label></td><td id="us"></td></tr>
-            <tr><td><label>Email:</label></td><td id="mai"></td></tr>
-            <tr><td><label>Reservations:</label></td><td id="res"><div></div></td></tr>
-        </table>
-        <!--
-        <div id="home"><a href="pag1.html">go to home page>></a></div>-->
-    </div>
-        <div id="right">
-        </div>
-        </div>
-    <footer>
-            <a href="https://en.wikipedia.org/wiki/Booking.com" target="_blank"> About us</a>
-        </footer>
-</body>
-    <script src="jquery-3.3.1.js"></script>
-<script>
-    document.getElementById('iamgbtn').addEventListener('change', readURL, true);
+            <div id="imgdiv">
 
-    function readURL() {
-        var file = document.getElementById("iamgbtn").files[0];
-        var reader = new FileReader();
-        reader.onloadend = function() {
-            document.getElementById('imgdiv').style.backgroundImage = "url(" + reader.result + ")";
-            localStorage.img = reader.result;
-        }
-        if (file) {
-            reader.readAsDataURL(file);
-        }
-    }
-    
-    $('#us').text(localStorage.user);
-    $('#mai').text(localStorage.mail);
-       
-    
-    
-</script>
+            </div>
+            <div id="imgbtn">
+                <label for="iamgbtn"> upload a photo</label>
+            </div>
+            <input id="iamgbtn" name="background-image" type="file">
+        </div>
+        <table>
+            <tr>
+                <td><label>UserName:</label></td>
+                <td id="us"></td>
+            </tr>
+            <tr>
+                <td><label>Email:</label></td>
+                <td id="mai"></td>
+            </tr>
+            <tr id="res">
+                <td><label>Reservations:</label></td>
+                <td>
+                    <div id="res">
+                        <table>
+                            <thead>
+                <th>hotel</th>
+                <th>payment</th>
+                </thead>
+                <tbody id="revTableBody">
+                </tbody>
+        </table>
+    </div>
+    </td>
+    </tr>
+    </table>
+</div>
+<div id="right">
+</div>
+</div>
+<footer>
+    <a href="https://en.wikipedia.org/wiki/Booking.com" target="_blank"> About us</a>
+</footer>
+</body>
+<script src="jquery-3.3.1.js"></script>
+<script src="profilepage.js"> </script>
 
 </html>
