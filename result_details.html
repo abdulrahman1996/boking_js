@@ -1,103 +1,233 @@
 <html>
-    <head>
-        <style>
-        
-            *{
-                font-family: 'Arial';
-                background-color: aliceblue;
-            }
-        .galary{
+
+<head>
+    <style>
+        * {
+            font-family: 'Arial';
+/*            background-color: aliceblue;*/
+             padding: 0px;
+    margin: 0px;
+        }
+
+        .galary {
             width: 1000px;
-            height: 600px;
+            height: 400px;
             margin: auto;
-            border: 1px solid black;
-        }  
-        .hotel-details{
+            margin-top: 50px;
+
+        }
+
+        .hotel-details {
             background-color: white;
             border-radius: 10px;
             display: flex;
             flex-direction: row;
-            
-            border: 1px solid gray;;
-           
+
+            border: 1px solid gray;
+            ;
+
             width: 1000px;
-            margin: auto; 
+            margin: auto;
             margin-top: 50px;
 
-        } 
-        .cr{
+        }
+
+        .cr {
             display: block;
             flex: 4;
         }
-        .hotel-name{
-          
+
+        .hotel-name {
+
             margin-left: 20px;
             font-size: 20px;
             padding: 10px;
             color: rgb(98, 98, 224);
             flex: 5;
-            
-        } 
-        .hotel-description{
+
+        }
+
+        .hotel-description {
             margin: 20px;
             padding: 10px;
-            margin-right:50px; 
+            margin-right: 50px;
             text-align: justify;
         }
-        .hotel-reserve{
+
+        .hotel-reserve {
             border-radius: 10px;
+            border-top-left-radius: 0px;
+            border-bottom-left-radius: 0px;
             flex: 1;
             height: 300px;
-            background-color: rgb(168, 240, 250);
+            background-color: orange;
         }
-        [type = date]{
 
-           margin: 15px;
-           padding: 10px;
-           border-radius: 15px;
-           background-color: #3884ed;
-           width: 150px;    
-           font-size: 15px;
-             
+        [type=date] {
+
+            margin: 15px;
+            padding: 10px;
+            border-radius: 15px;
+            background-color: #3884ed;
+            width: 150px;
+            font-size: 15px;
+            border-style: none;
+
 
         }
-        [type = date]:hover{
+
+        [type=date]:hover {
             background: #003580;
         }
-        [type = button]{
-            padding: 10px;;
+
+        [type=button] {
+            padding: 10px;
+
             width: 130px;
-            height: 60px;
+            height: 40px;
             background: white;
             border: 0 none;
             background-color: white;
             cursor: pointer;
             color: black;
-            
-            font-weight:  bold; 
+
+            font-weight: bold;
             border-radius: 5px;
-            
+
             margin-left: 25px;
-            
-        }
-        [type=button]:hover{
-            background: orange;
+            margin-top: 80px;
+
         }
 
-        [type=button]:disabled{
+        [type=button]:hover {
+            background-color: darkblue;
+            
+        }
+
+        [type=button]:disabled {
             background: gray;
         }
 
-        #roomCount{
+        #roomCount {
             width: 100px;
             margin: auto;
-            margin-bottom:40px; 
+            margin-bottom: 40px;
         }
+
        
-        </style>
+           #myimg {
+            width: 1000px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 15px;
+
+        }
+
+        #myimg:hover {
+            width: 1050px;
+            height: 620px;
+            border-radius: 20px;
+            transition: 2s;
+        }
+        
+        #h {
+
+    display: inline;
+    padding: 100px;
+    margin-top: 20px;
+ 
+    text-decoration: none;
+    color: white;
+    font-size: 20pt;
+    font-weight: bold;
+
+}
+
+
+
+header {
+
+    box-sizing: border-box;
+    width: 100%;
+    height: 120px;
+    background-color: darkblue;
+    color: white;
+
+
+}
+.btn:hover
+{
+  
+    color: white;
+}
+header p
+{
+    position: absolute;
+    left:1200px;  
+    font-weight: bold;
+    
+}
+.btn {
+    cursor: pointer;
+    border: none;
+    position: relative;
+    left: 800px;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+    width: 70px;
+    margin-top: 15px;
+    font-weight: bold;
+}
+        #wel
+{
+   font-size: 10pt;
+    color: white;
+    font-weight: bold;
+    margin-top: -20px;
+    margin-left: 10px;
+}
+
+#wel:hover
+{
+    
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#hid
+{
+    margin-left: 100px;
+    margin-top: -100px;
+}
+       #bar
+{
+    background-color: orange;
+    text-align: center;
+ 
+}
+#bar a 
+{
+    padding: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 12pt;
+    color: darkblue;
+}
+
+#bar a:hover
+{
+  
+    color: white;
+}
+
+
+    </style>
+
     </head>
     <body>
-      <!--
+      
           <header> <a id="h" href="#">Booking.com</a>
      
         <input  onclick="parent.location='register.html'" class="btn hid" type="button" value="Register" action="register.html">
@@ -115,32 +245,44 @@
        <a href="profilepage.html">Profile</a>
      
     </div>
-   -->
-        <div class="galary">
+   
+    
 
+
+
+    <div class="container">
+
+
+
+
+        <div class="galary">
+            <img id="myimg" src="https://r-ec.bstatic.com/images/hotel/max1024x768/118/118750378.jpg">
+            <!--        <img id="btn2" style="width:50px" src="right.png" >-->
 
         </div>
         <div class="hotel-details">
             <div class="cr">
-                    
+
             </div>
-            
+
             <div class="hotel-reserve">
-                
-                <input type="date"  id="from-date">
-                <input type="date" id="to-date"> 
+
+                <input type="date" id="from-date">
+                <input type="date" id="to-date">
                 <!-- <div id="roomCount"></div> -->
-                
-                <input  type="button" id="reserve"  value="reserve now"  disabled >
+
+                <input type="button" id="reserve" value="reserve now" disabled>
             </div>
             <div>
 
             </div>
         </div>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js    "></script>
-                <script src="result_details.js"></script>
-    </body>
-    <script src="afterLogin.js">
-        </script>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js    "></script>
+    <script src="result_details.js"></script>
+     <script src="afterLogin.js"></script>
+</body>
+
 </html>
